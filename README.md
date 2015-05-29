@@ -25,7 +25,6 @@ De belangrijkste bestanden voor de lassie app zijn de volgende:
   * Strings.xml. Hierin worden ALLE strings opgeslagen die voorkomen in de app. Gebruik dus geen hardcoded tekst, maar
   een verwijzing naar strings.xml door middel van "@string/voorbeeld"
   * Drawawbles. Drawables zijn plaatjes die in de app gebruikt worden. Deze zijn te vinden in Lassie/app/src/res/.
-  * Kies goede namen voor id's en strings. In activity_home.xml is dit bijvoorbeeld "@id/edittext_email" voor de editText van de email. Houdt het dus leesbaar!
   
 ## Enkele guidelines conform design
  * DE BELANGRIJKSTE: CONTROLEER ALTIJD JE CODE VOORDAT JE IETS COMMIT. Als je dit niet doet, gaat iemand anders dus verder met 
@@ -35,8 +34,8 @@ De belangrijkste bestanden voor de lassie app zijn de volgende:
  https://romannurik.github.io/AndroidAssetStudio/index.html
  * Sla strings altijd op in Strings.xml. Hierdoor kan tekst makkelijk bewerkt worden en hoeft er dus niet helemaal gezocht
   te worden tussen alle regels code.
- * Kijk naar de panelen voordat je iets maakt. Hierdoor voorkom je dat dat je iets maakt waar niet over is overlegd. Het is de
-  bedoeling dat alles wat gemaakt wordt is besproken en dus niet ter plekke uit je duim gezogen is.
+ * Kijk naar de panelen voordat je iets maakt. Hierdoor voorkom je dat dat je iets maakt waar niet over is overlegd. Het is de bedoeling dat alles wat gemaakt wordt is besproken en dus niet ter plekke uit je duim gezogen is.
+ * Kies goede namen voor id's en strings. In activity_home.xml is dit bijvoorbeeld "@id/edittext_email" voor de editText van de email. Houdt het dus leesbaar!
 
 ## De opbouw
 Elk paneel is min of meer opgebouwd uit 2 bestanden:
