@@ -21,6 +21,8 @@
     <string name="menu_gesloten">Drawer close</string>
     <string name="textview_profiel">Bekijk profiel</string>
     <string name="contentdescription_logo">Logo</string>
+    <string name="textview_status">Vermist</string>
+    <string name="contentdescription_profiel">Profiel</string>
 
     <!-- Menu items -->
     <string-array name="menu_items">

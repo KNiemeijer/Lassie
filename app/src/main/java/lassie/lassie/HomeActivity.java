@@ -34,18 +34,24 @@ public class HomeActivity extends Fragment {
         ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
         vermist.setChecked(true);
 
-        return fragmentview;
-    }
-
-    public void Switch(View view) {
-        ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
         ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
-        if (view == gevonden) {
-            vermist.toggle();
-        }
-        if (view == vermist) {
-            gevonden.toggle();
-        }
+        vermist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
+                gevonden.toggle();
+            }
+        });
+
+        gevonden.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
+                vermist.toggle();
+            }
+        });
+
+        return fragmentview;
     }
 }
 
