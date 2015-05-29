@@ -47,7 +47,7 @@ In het .java bestand staat beschreven wat het paneel moet doen, terwijl in het .
 Home.java en activity_home.XML zijn het inlogscherm. Hier komt de gebruiker als eerste langs (of niet, hangt ervan af of deze als is ingelogd). Omdat dit tot nu toe een horizontaal prototype is, verwijst de "Registreer" knop rechtstreeks door naar MainActivity.java en zijn bijbehorende activity_main.XML. MainActivity.java is de basis voor de hele app. In MainActivity.java zit namelijk het menu zelf ingebouwd, en niet in elk .java bestand zoals je misschien zou denken. Het principe is hetzelfde als bij website en iFrames. Het menu bevindt zich op één plek (MainActivity.java) en verandert dus niet wanneer je in het menu op een ander scherm klikt. De inhoud echter (alles onder de ActionBar), verandert wel. 
 
 Dit stuk dat wel verandert, heet een Fragment. Vandaar dat je in bijvoorbeeld HomeActivity of MijnOverzicht ook ziet staan:
-```
+``` java
   public class HomeActivity extends Fragment
 ```
 Dit wil zeggen dat elk paneel dat in het menu staat een uitbreiding is van een standaard Fragment. Door dit principe hoef je niet steeds het menu steeds opnieuw te maken. Ook verandert de titel automatisch mee.
