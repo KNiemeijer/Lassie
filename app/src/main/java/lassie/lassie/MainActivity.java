@@ -159,6 +159,24 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
             case 1:
                 fragment = new MijnOverzicht();
                 break;
+            case 2:
+                fragment = new PlaatsBerichtVermissing();
+                break;
+            case 3:
+                fragment = new PlaatsBerichtGevonden();
+                break;
+            case 4:
+                fragment = new LijstKaart();
+                break;
+            case 5:
+                fragment = new Gebruikerspagina();
+                break;
+            case 6:
+                fragment = new Notificaties();
+                break;
+            case 7:
+                fragment = new Instellingen();
+                break;
             default:
                 break;
         }
