@@ -17,13 +17,6 @@
         android:layout_marginTop="28dp"
         android:text="@string/button_plaats_bericht" />
 
-    <View
-        android:layout_width="fill_parent"
-        android:layout_height="1dp"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/button_plaats_bericht"
-        android:layout_marginTop="25dp"
-        android:background="@android:color/darker_gray" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,4 +56,16 @@
             android:textOn="@string/button_gevonden" />
         <!-- TODO: Reageren op switch event (de één aan, de ander uit) -->
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageview_profiel"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignStart="@+id/button_plaats_bericht"
+        android:layout_below="@+id/button_plaats_bericht"
+        android:layout_gravity="center"
+        android:layout_marginTop="62dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_hond_voorbeeld" />
+
 </RelativeLayout>
