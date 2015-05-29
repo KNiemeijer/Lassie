@@ -1,4 +1,4 @@
-# Lassie
+# Bassie
 Dit is de officiële lassie app die mensen helpt met het zoeken naar hun huisdieren. Hieronder volgt een korte handleiding
 waar staat wat wat is en hoe de app in elkaar zit. Ook worden er een paar standaarden beschreven die ten alle tijden
 gevolgd moeten worden. Dit is in verband met consistentie van de lay-out.
