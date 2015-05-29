@@ -3,6 +3,13 @@ Dit is de officiële lassie app die mensen helpt met het zoeken naar hun huisdie
 waar staat wat wat is en hoe de app in elkaar zit. Ook worden er een paar standaarden beschreven die ten alle tijden
 gevolgd moeten worden. Dit is in verband met consistentie van de lay-out.
 
+## Inhoudsopgave
+* Waar begin ik?
+* De belangrijkste bestanden
+* Enkele guidlines conform design
+* De opbouw
+* FAQ
+
 ## Waar begin ik?
 Je begint met het downloaden van Android Studio (https://developer.android.com/sdk/index.html), waarna je meteen Java SE
 Development Kit kan downloaden (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). 
@@ -30,6 +37,24 @@ De belangrijkste bestanden voor de lassie app zijn de volgende:
   te worden tussen alle regels code.
  * Kijk naar de panelen voordat je iets maakt. Hierdoor voorkom je dat dat je iets maakt waar niet over is overlegd. Het is de
   bedoeling dat alles wat gemaakt wordt is besproken en dus niet ter plekke uit je duim gezogen is.
+
+## De opbouw
+Elk paneel is min of meer opgebouwd uit 2 bestanden:
+* Een .java bestand
+* Een corresponderen .XML bestand
+
+In het .java bestand staat beschreven wat het paneel moet doen, terwijl in het .XML bestand staat hoe het paneel is opgebouwd. De hele app bestaat natuurlijk niet uit een hoopje losse panelen, hier zit samenhang tussen. Deze is als volgt opgebouwd:
+
+Home.java en activity_home.XML zijn het inlogscherm. Hier komt de gebruiker als eerste langs (of niet, hangt ervan af of deze als is ingelogd). Omdat dit tot nu toe een horizontaal prototype is, verwijst de "Registreer" knop rechtstreeks door naar MainActivity.java en zijn bijbehorende activity_main.XML. MainActivity.java is de basis voor de hele app. In MainActivity.java zit namelijk het menu zelf ingebouwd, en niet in elk .java bestand zoals je misschien zou denken. Het principe is hetzelfde als bij website en iFrames. Het menu bevindt zich op één plek (MainActivity.java) en verandert dus niet wanneer je in het menu op een ander scherm klikt. De inhoud echter (alles onder de ActionBar), verandert wel. 
+
+Dit stuk dat wel verandert, heet een Fragment. Vandaar dat je in bijvoorbeeld HomeActivity of MijnOverzicht ook ziet staan:
+```
+  public class HomeActivity extends Fragment
+```
+Dit wil zeggen dat elk paneel dat in het menu staat een uitbreiding is van een standaard Fragment. Door dit principe hoef je niet steeds het menu steeds opnieuw te maken. Ook verandert de titel automatisch mee.
+
+TL;DR: Het menu hoeft niet meer aan de panelen toegevoegd te worden.
+ 
 
 ## FAQ
 ### Hoe test ik de app?
