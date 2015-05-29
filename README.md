@@ -12,7 +12,7 @@ gevolgd moeten worden. Dit is in verband met consistentie van de lay-out.
 
 ## Waar begin ik?
 Je begint met het downloaden van Android Studio (https://developer.android.com/sdk/index.html), waarna je meteen Java SE
-Development Kit kan downloaden (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html). Ook heb je de github tools nodig. Deze zijn te downloaden van https://git-scm.com/download/win.
+Development Kit kan downloaden (http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 Kloon (lees: download) de repo en importeer hem in Android Studio (File -> New -> Import project). Als het goed is, is het
 project nu geopend.
 
