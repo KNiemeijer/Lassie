@@ -26,7 +26,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:text="@string/edittext_email" />
+        android:hint="@string/edittext_email" />
 
     <EditText
         android:id="@+id/edittext_gebruikersnaam"
@@ -36,7 +36,7 @@
         android:layout_alignTop="@+id/textview_gebruikersnaam"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/edittext_gebruikersnaam" />
+        android:hint="@string/edittext_gebruikersnaam" />
 
     <EditText
         android:id="@+id/edittext_wachtwoord"
@@ -45,7 +45,7 @@
         android:layout_alignStart="@+id/edittext_herhaal_wachtwoord"
         android:layout_below="@+id/edittext_gebruikersnaam"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"/>
 
     <EditText
         android:id="@+id/edittext_herhaal_wachtwoord"
@@ -54,7 +54,7 @@
         android:layout_alignStart="@+id/button_continue"
         android:layout_below="@+id/edittext_wachtwoord"
         android:ems="10"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"/>
 
     <!-- TODO: Overflow in edittext -->
 

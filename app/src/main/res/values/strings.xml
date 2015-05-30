@@ -4,13 +4,13 @@
     <string name="action_search">Zoeken</string>
     <string name="button_continue">Registreer</string>
     <string name="edittext_email">Vul hier uw e-mail in</string>
-    <string name="edittext_gebruikersnaam">Vul hier uw gebruikersnaam in</string>
+    <string name="edittext_gebruikersnaam">Uw gewenste naam</string>
     <string name="textview_email">E-mail</string>
     <string name="textview_gebruikersnaam">Gebruikersnaam</string>
     <string name="textview_wachtwoord">Wachtwoord</string>
     <string name="textview_herhaal_wachtwoord">Herhaal wachtwoord</string>
     <string name="textview_nieuw_account">Nieuw account aanmaken</string>
-    <string name="textview_login_met">Of login met \u0020 \u0020 \u0020 of</string>
+    <string name="textview_login_met">Of login met \u0020 \u0020 \u0020 \u0020 of</string>
     <string name="imageview_facebook">Facebook</string>
     <string name="imageview_google">Google</string>
     <string name="title_activity_main">MainActivity</string>
