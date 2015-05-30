@@ -40,7 +40,7 @@ De belangrijkste bestanden voor de lassie app zijn de volgende:
 ## De opbouw
 Elk paneel is min of meer opgebouwd uit 2 bestanden:
 * Een .java bestand
-* Een corresponderen .XML bestand
+* Een corresponderend .XML bestand
 
 In het .java bestand staat beschreven wat het paneel moet doen, terwijl in het .XML bestand staat hoe het paneel is opgebouwd. De hele app bestaat natuurlijk niet uit een hoopje losse panelen, hier zit samenhang tussen. Deze is als volgt opgebouwd:
 
@@ -58,7 +58,7 @@ TL;DR: Het menu hoeft niet meer aan de panelen toegevoegd te worden.
 ## FAQ
 ### Hoe test ik de app?
  Om de app te testen, moet je hem afspelen op een zogenaamde emulator. De computer simuleert een telefoon, waardoor de app
- afgespeeld kan worden. laadt het project en druk op shift + f10. Met het creëeren van de app is de Nexus 5 met API 22
+ afgespeeld kan worden. Laad het project en druk op shift + f10. Met het creëeren van de app is de Nexus 5 met API 22
  gebruikt, maar je bent vrij om een ander apparaat te gebruiken. Zorg er wel voor dat je voldoende RAM geheugen beschikbaar
  hebt (maar dat geeft hij vanzelf aan als dast niet zo is).
  
