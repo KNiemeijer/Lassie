@@ -36,7 +36,7 @@
         android:layout_alignTop="@+id/textview_gebruikersnaam"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="@string/edittext_gebruikersnaam" />
+        android:hint="@string/edittext_gebruikersnaam"/>
 
     <EditText
         android:id="@+id/edittext_wachtwoord"
