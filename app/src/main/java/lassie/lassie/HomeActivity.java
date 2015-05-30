@@ -25,29 +25,51 @@ public class HomeActivity extends Fragment {
 
         fragmentview = inflater.inflate(R.layout.fragment_home_activity, container, false);
 
-        // Rond profiel aanmaken
+        // Rond profiel aanmaken Zoef
         imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_profiel);
         Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_hond_voorbeeld);
         roundedImage = new RoundImage(bm);
         imageview_profiel.setImageDrawable(roundedImage);
 
-        ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
+        // Rond profiel aanmaken Zoef
+        imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_lassie);
+        bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_lassie);
+        roundedImage = new RoundImage(bm);
+        imageview_profiel.setImageDrawable(roundedImage);
+
+        // Rond profiel aanmaken Frank
+        imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_frank);
+        bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_kat_voorbeeld);
+        roundedImage = new RoundImage(bm);
+        imageview_profiel.setImageDrawable(roundedImage);
+
+        final ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
         vermist.setChecked(true);
 
-        ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
+        // Klik event gevonden button
+        final ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
         vermist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
-                gevonden.toggle();
+                if (vermist.isChecked()) {
+                    vermist.toggle();
+                } else {
+                    gevonden.toggle();
+                }
             }
         });
 
+        // Klik event vermist button
         gevonden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
-                vermist.toggle();
+                if (gevonden.isChecked()) {
+                    gevonden.toggle();
+                } else {
+                    vermist.toggle();
+                }
             }
         });
 
