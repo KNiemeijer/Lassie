@@ -15,7 +15,7 @@
         android:background="#ff009688"
         android:onClick="Continue"
         android:padding="10dp"
-        android:text="@string/button_continue" />
+        android:text="@string/button_continue"/>
 
     <EditText
         android:id="@+id/edittext_email"
@@ -26,7 +26,7 @@
         android:layout_marginTop="28dp"
         android:ems="10"
         android:inputType="textEmailAddress"
-        android:hint="@string/edittext_email" />
+        android:hint="@string/edittext_email"/>
 
     <EditText
         android:id="@+id/edittext_gebruikersnaam"
