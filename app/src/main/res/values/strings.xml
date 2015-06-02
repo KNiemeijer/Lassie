@@ -28,8 +28,8 @@
     <string name="textview_gegevens_lassie">Lassie \nCollie \nWit met bruin</string>
     <string name="textview_gegevens_hond_voorbeeld">Zoef \nBeagle \nBruin met wit</string>
     <string name="textview_gegevens_kat_voorbeeld">Frank \nLapjeskat \nGrijs/bruin met wit</string>
-    <string name="hondnaam">Naam van de hond</string>
-    <string name="gegevens_hond">Ras \nUiterlijke kenmerken</string>
+    <string name="diernaam">Naam van het dier</string>
+    <string name="gegevens_dier">Soort dier \nUiterlijke kenmerken of bijzondere eigenschappen</string>
 
     <!-- Menu items -->
     <string-array name="menu_items">
