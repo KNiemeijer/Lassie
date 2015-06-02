@@ -25,8 +25,8 @@
         android:layout_below="@+id/textview_nieuw_account"
         android:layout_marginTop="28dp"
         android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="@string/edittext_email"/>
+        android:hint="@string/edittext_email"
+        android:inputType="textEmailAddress" />
 
     <EditText
         android:id="@+id/edittext_gebruikersnaam"
@@ -35,8 +35,8 @@
         android:layout_alignStart="@+id/edittext_wachtwoord"
         android:layout_alignTop="@+id/textview_gebruikersnaam"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="@string/edittext_gebruikersnaam"/>
+        android:hint="@string/edittext_gebruikersnaam"
+        android:inputType="textPersonName" />
 
     <EditText
         android:id="@+id/edittext_wachtwoord"
@@ -138,26 +138,31 @@
         android:id="@+id/imageview_facebook"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignEnd="@+id/imageview_logo"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginBottom="87dp"
-        android:layout_marginEnd="177dp"
-        android:clickable="true"
+        android:layout_alignTop="@+id/textview_login_met"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/textview_login_met"
         android:contentDescription="@string/imageview_facebook"
-        android:src="@drawable/ic_facebook"
-        android:textAlignment="center" />
+        android:src="@drawable/ic_facebook" />
 
     <!-- TODO: Facebook icoon goed laten verschijnen -->
+
+    <TextView
+        android:id="@+id/textview_of"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageview_facebook"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/imageview_facebook"
+        android:text="@string/textview_of"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <ImageView
         android:id="@+id/imageview_google"
         android:layout_width="20dp"
         android:layout_height="20dp"
-        android:layout_alignBottom="@+id/textview_login_met"
-        android:layout_alignEnd="@+id/textview_nieuw_account"
-        android:layout_marginBottom="0dp"
-        android:layout_marginEnd="77dp"
+        android:layout_alignTop="@+id/textview_of"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/textview_of"
         android:contentDescription="@string/imageview_google"
         android:src="@drawable/ic_google" />
 
