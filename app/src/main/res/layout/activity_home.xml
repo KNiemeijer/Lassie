@@ -144,8 +144,6 @@
         android:contentDescription="@string/imageview_facebook"
         android:src="@drawable/ic_facebook" />
 
-    <!-- TODO: Facebook icoon goed laten verschijnen -->
-
     <TextView
         android:id="@+id/textview_of"
         android:layout_width="wrap_content"
