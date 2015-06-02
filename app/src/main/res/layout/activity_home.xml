@@ -108,17 +108,17 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_alignParentTop="true"
-        android:layout_toEndOf="@+id/textview_email"
+        android:layout_centerHorizontal="true"
         android:contentDescription="@string/contentdescription_logo"
         android:scaleType="fitXY"
         android:src="@drawable/logo"
-        android:textAlignment="center" />
+         />
 
     <TextView
         android:id="@+id/textview_nieuw_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textview_email"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/imageview_logo"
         android:text="@string/textview_nieuw_account"
         android:textAppearance="?android:attr/textAppearanceLarge" />
