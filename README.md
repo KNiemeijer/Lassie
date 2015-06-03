@@ -8,6 +8,7 @@ gevolgd moeten worden. Dit is in verband met consistentie van de lay-out.
 * De belangrijkste bestanden
 * Enkele guidlines conform design
 * De opbouw
+* Code voor de database
 * FAQ
 
 ## Waar begin ik?
@@ -54,6 +55,27 @@ Dit wil zeggen dat elk paneel dat in het menu staat een uitbreiding is van een s
 
 TL;DR: Het menu hoeft niet meer aan de panelen toegevoegd te worden.
  
+## Code voor de database
+Het idee voor de database (in ieder geval voor de lijst), is dat elk plaatje een unieke identifier heeft. Stel we hebben en verzameling plaatjes met de ID's {1,2,3,4,5...n}, dan halen we die als volgt op in de app
+
+``` java
+   int t = 1;
+   try {
+      while (true) {
+        plaatjesLijst.add(afGaan(t));
+        t++;
+        }
+      }
+   catch (Exception e) { }
+   
+   public drawable afGaan (int t) {
+      string i = "R.drawable.";
+      i += t;
+      final Field field = R.drawable.getField(i);
+      int id = field.getInt(null);
+      Drawable drawable = getResources().getDrawable(id);
+   }
+```
 
 ## FAQ
 ### Hoe test ik de app?
