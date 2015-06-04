@@ -10,9 +10,6 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-/**
- * Created by Sander on 31-5-2015.
- */
 public /*static*/ class Fragment extends ListFragment {
     /**
      * The fragment argument representing the section number for this

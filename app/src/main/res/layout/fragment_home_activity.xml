@@ -71,7 +71,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="120dp"
                 android:layout_marginStart="120dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="72dp"
-                android:backgroundTint="@color/darkred"
+                android:background="@color/red"
                 android:text="@string/textview_status_vermist"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -104,8 +104,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="80dp"
-                android:layout_marginStart="420dp"
+                android:layout_marginBottom="120dp"
+                android:layout_marginStart="370dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
                 android:scaleType="centerCrop"
@@ -126,8 +126,8 @@
                 android:id="@+id/textview_status_lassie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="372dp"
-                android:backgroundTint="@color/darkred"
+                android:layout_marginStart="322dp"
+                android:background="@color/red"
                 android:text="@string/textview_status_vermist"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -137,8 +137,8 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginBottom="80dp"
-                android:layout_marginStart="720dp"
+                android:layout_marginBottom="120dp"
+                android:layout_marginStart="620dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
                 android:scaleType="centerCrop"
@@ -159,8 +159,8 @@
                 android:id="@+id/textview_status_frank"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="672dp"
-                android:backgroundTint="@color/darkred"
+                android:layout_marginStart="572dp"
+                android:background="@color/green"
                 android:text="@string/textview_status_gevonden"
                 android:textAppearance="?android:attr/textAppearanceMedium" />
         </RelativeLayout>

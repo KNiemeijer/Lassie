@@ -22,7 +22,6 @@ public class HomeActivity extends Fragment {
                              Bundle savedInstanceState) {
         ImageView imageview_profiel;
         RoundImage roundedImage;
-
         fragmentview = inflater.inflate(R.layout.fragment_home_activity, container, false);
 
         // Rond profiel aanmaken Zoef
@@ -73,7 +72,33 @@ public class HomeActivity extends Fragment {
             }
         });
 
+        //  tekenen();
         return fragmentview;
     }
+
+    // Methode voor meerdere plaatjes naast elkaar plaatsen (reeks {1,2,3...n} ).
+  /*      public void tekenen () {
+        int t = 1;
+        int margin_left = 120;
+        try {
+            while (true) {
+                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                lp.setMargins(margin_left, 0, 0, 80);
+                afGaan(t).setLayoutParams(lp);
+                margin_left += 300;
+                t++;
+            }
+        } catch (Exception e) { }
+    }
+
+        public ImageView afGaan (int t) {
+            String i = "R.drawable.";
+            i = i + t;
+            int resID = getResources().getIdentifier(i,
+                    "id", "lassie.lassie");
+            return (ImageView) fragmentview.findViewById(resID);
+        }
+*/
+
 }
 
