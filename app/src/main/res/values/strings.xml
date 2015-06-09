@@ -30,6 +30,14 @@
     <string name="textview_gegevens_kat_voorbeeld">Frank \nLapjeskat \nGrijs/bruin met wit</string>
     <string name="diernaam">Naam van het dier</string>
     <string name="gegevens_dier">Soort dier \nUiterlijke kenmerken of bijzondere eigenschappen</string>
+    <string name="button_opslaan">Opslaan</string>
+    <string name="textview_account">Account</string>
+    <string name="textview_taal">Taal</string>
+    <string name="textview_nederlands">Nederlands</string>
+    <string name="textview_engels">Engels</string>
+    <string name="textview_meldingen">Meldingen</string>
+    <string name="textview_reactie">Bij een reactie</string>
+    <string name="textview_volger">Bij een nieuwe volger</string>
 
     <!-- Menu items -->
     <string-array name="menu_items">
