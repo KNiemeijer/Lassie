@@ -41,6 +41,8 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         TextView email = new TextView(this);
         email.setTextSize(40);
         email.setText(emailMessage);
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+        assert getSupportActionBar() != null;
 
         // Ophalen menu namen uit de array menu_items in strings.xml
         menuItems = getResources().getStringArray(R.array.menu_items);
@@ -102,7 +104,6 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
@@ -117,10 +118,15 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         }
         switch (item.getItemId()) {
             case R.id.action_settings:
+                actionSettings();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void actionSettings() {
+        selecteerFragment(7);
     }
 
     // Als het menu geopend is, laat dan geen action bar icons zien
@@ -176,6 +182,7 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
                 break;
             case 7:
                 fragment = new Instellingen();
+                getSupportActionBar().setHomeButtonEnabled(false);  // hides action bar icon
                 break;
             default:
                 break;

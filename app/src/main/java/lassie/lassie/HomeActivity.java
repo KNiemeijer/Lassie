@@ -43,32 +43,23 @@ public class HomeActivity extends Fragment {
         imageview_profiel.setImageDrawable(roundedImage);
 
         final ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
-        vermist.setChecked(true);
 
-        // Klik event gevonden button
+        // Klik event vermist button
         final ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
         vermist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
-                if (vermist.isChecked()) {
-                    vermist.toggle();
-                } else {
-                    gevonden.toggle();
-                }
+                gevonden.toggle();
             }
         });
 
-        // Klik event vermist button
+        // Klik event gevonden button
         gevonden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
-                if (gevonden.isChecked()) {
-                    gevonden.toggle();
-                } else {
-                    vermist.toggle();
-                }
+                vermist.toggle();
             }
         });
 

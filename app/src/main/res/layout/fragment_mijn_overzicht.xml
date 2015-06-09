@@ -1,9 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?><!-- Main content -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainContent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="2"
+    tools:context="lassie.lassie.MijnOverzicht">
 
-    <!-- TODO: Invulling geven -->
+    <LinearLayout
+        android:id="@+id/linearlayout_togglebutton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
 
+        <ToggleButton
+            android:id="@+id/button_vermissingen"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginEnd="-4dp"
+            android:layout_marginTop="-2dp"
+            android:layout_weight="1"
+            android:checked="true"
+            android:clickable="true"
+            android:enabled="true"
+            android:textOff="Mijn vermissingen"
+            android:textOn="Mijn vermissingen" />
 
+        <View
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="0"
+            android:background="#ff111011" />
+
+        <ToggleButton
+            android:id="@+id/button_berichten"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginStart="-4dp"
+            android:layout_marginTop="-2dp"
+            android:layout_weight="1"
+            android:checked="false"
+            android:clickable="true"
+            android:textOff="Mijn berichten"
+            android:textOn="Mijn berichten" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingEnd="15dp"
+        android:paddingStart="15dp"
+        android:paddingTop="80dp">
+
+        <!-- Mijn vermissingen -->
+        <TableLayout
+            android:id="@+id/layout_vermissingen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow android:weightSum="4">
+
+                <ImageView
+                    android:id="@+id/imageview_zoef"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/textview_gegevens_hond_voorbeeld"
+                    android:src="@drawable/ic_hond_voorbeeld" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:paddingEnd="20dp"
+                    android:paddingStart="15dp"
+                    android:text="@string/textview_status_vermist"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:textColor="@color/red" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:paddingEnd="15dp"
+                    android:paddingStart="0dp"
+                    android:text="@string/Zoef"
+                    android:textAppearance="?android:attr/textAppearanceSmall" />
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:background="#ff009688"
+                    android:padding="10dp"
+                    android:text="@string/button_details" />
+            </TableRow>
+
+        </TableLayout>
+
+        <!-- Mijn berichten -->
+        <RelativeLayout
+            android:id="@+id/layout_berichten"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textview_heading1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aan DierenLiefHebber1"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/textview_mijn_berichten_voorbeeld"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textview_heading1"
+                android:text="Hallo, ik geloof dat ik jouw kat heb gezien op de Kruisstraat. Kan dit kloppen?"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Button
+                android:id="@+id/button_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/textview_mijn_berichten_voorbeeld"
+                android:text="@string/button_details" />
+
+        </RelativeLayout>
+    </FrameLayout>
 </RelativeLayout>
