@@ -40,6 +40,12 @@
     <string name="textview_volger">Bij een nieuwe volger</string>
     <string name="Zoef">Zoef</string>
     <string name="button_details">Details</string>
+    <string name="textview_naam">Naam:</string>
+    <string name="textview_ras">Ras:</string>
+    <string name="textview_kleur">Kleur:</string>
+    <string name="textview_eigenschappen">Kenmerk:</string>
+    <string name="button_reageer">Reageer</string>
+
 
     <!-- Menu items -->
     <string-array name="menu_items">

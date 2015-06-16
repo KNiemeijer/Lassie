@@ -1,10 +1,10 @@
 package lassie.lassie;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,13 +12,11 @@ import android.view.View;
 import android.widget.EditText;
 
 
-public class Home extends ActionBarActivity {
+public class Home extends Activity {
     public final static String gebruikersnaammessage = Home.gebruikersnaammessage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        getSupportActionBar().setHomeButtonEnabled(false);
         setContentView(R.layout.splash);
         //display the logo during 5 secondes,
         new CountDownTimer(3000, 1000) {
