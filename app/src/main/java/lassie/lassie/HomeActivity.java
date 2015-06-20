@@ -1,6 +1,7 @@
 package lassie.lassie;
 
 import android.app.Fragment;
+import android.app.FragmentManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -13,6 +14,11 @@ import android.widget.ToggleButton;
 public class HomeActivity extends Fragment {
 
     View fragmentview;
+    String status;
+    String naam;
+    String ras;
+    String kleur;
+    String eigenschappen;
 
     public HomeActivity() {
     }
@@ -29,51 +35,81 @@ public class HomeActivity extends Fragment {
         Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_hond_voorbeeld);
         roundedImage = new RoundImage(bm);
         imageview_profiel.setImageDrawable(roundedImage);
+        status = "Vermist";
+        naam = "Zoef";
+        ras = "beagle";
+        kleur = "Wit met bruin";
+        eigenschappen = "Is schuw maar wel lief";
+        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
 
         // Rond profiel aanmaken Zoef
         imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_lassie);
         bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_lassie);
         roundedImage = new RoundImage(bm);
         imageview_profiel.setImageDrawable(roundedImage);
+        status = "Vermist";
+        naam = "Lassie";
+        ras = "Collie";
+        kleur = "Bruin met wit";
+        eigenschappen = "Is goed met kinderen";
+        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
 
         // Rond profiel aanmaken Frank
         imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_frank);
         bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_kat_voorbeeld);
         roundedImage = new RoundImage(bm);
         imageview_profiel.setImageDrawable(roundedImage);
+        status = "Gevonden";
+        naam = "Frank";
+        ras = "Lapjeskat";
+        kleur = "Wit met grijs";
+        eigenschappen = "Reageert op zijn naam";
+        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
 
         final ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
-        vermist.setChecked(true);
 
-        // Klik event gevonden button
+        // Klik event vermist button
         final ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
         vermist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
-                if (vermist.isChecked()) {
-                    vermist.toggle();
-                } else {
-                    gevonden.toggle();
-                }
+                gevonden.toggle();
             }
         });
 
-        // Klik event vermist button
+        // Klik event gevonden button
         gevonden.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
-                if (gevonden.isChecked()) {
-                    gevonden.toggle();
-                } else {
-                    vermist.toggle();
-                }
+                vermist.toggle();
             }
         });
 
         //  tekenen();
         return fragmentview;
+    }
+
+    private void imageviewProfielListener(final ImageView profiel, final Bitmap bm, final String status, final String naam, final String ras,
+                                          final String kleur, final String eigenschappen) {
+        profiel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Fragment fragment = new DetailView();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .addToBackStack("detailView").replace(R.id.frame_container, fragment).commit();
+                Bundle extras = new Bundle();
+                extras.putParcelable("imageview_profiel", bm);
+                extras.putString("status", status);
+                extras.putString("naam", naam);
+                extras.putString("ras", ras);
+                extras.putString("kleur", kleur);
+                extras.putString("eigenschappen", eigenschappen);
+                fragment.setArguments(extras);
+            }
+        });
     }
 
     // Methode voor meerdere plaatjes naast elkaar plaatsen (reeks {1,2,3...n} ).

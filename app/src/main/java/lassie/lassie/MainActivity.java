@@ -41,6 +41,9 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         TextView email = new TextView(this);
         email.setTextSize(40);
         email.setText(emailMessage);
+        assert getSupportActionBar() != null;
+        getSupportActionBar().setDisplayUseLogoEnabled(true);
+
 
         // Ophalen menu namen uit de array menu_items in strings.xml
         menuItems = getResources().getStringArray(R.array.menu_items);
@@ -96,13 +99,27 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         if (savedInstanceState == null) {
             selecteerFragment(0);
         }
+
+        getSupportFragmentManager().addOnBackStackChangedListener(new android.support.v4.app.FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                int stackHeight = getSupportFragmentManager().getBackStackEntryCount();
+                if (stackHeight > 0) { // if we have something on the stack (doesn't include the current shown fragment)
+                    getSupportActionBar().setHomeButtonEnabled(true);
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+                } else {
+                    getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+                    getSupportActionBar().setHomeButtonEnabled(false);
+                }
+            }
+        });
     }
+
 
     // Maakt de menu opties (standaard methode)
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        // Inflate the menu items for use in the action bar
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_main, menu);
         return super.onCreateOptionsMenu(menu);
@@ -116,11 +133,19 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
             return true;
         }
         switch (item.getItemId()) {
+            case R.id.home:
+                getSupportFragmentManager().popBackStack();
+                return true;
             case R.id.action_settings:
+                actionSettings();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void actionSettings() {
+        selecteerFragment(7);
     }
 
     // Als het menu geopend is, laat dan geen action bar icons zien
@@ -146,7 +171,7 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
     }
 
     // Verwisselt de fragments
-    private void selecteerFragment(int position) {
+    public void selecteerFragment(int position) {
         // Creëer de fragment
         Fragment fragment = null;
 
@@ -176,9 +201,12 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
                 break;
             case 7:
                 fragment = new Instellingen();
+                getSupportActionBar().setHomeButtonEnabled(false);  // hides action bar icon
                 break;
-            default:
-                break;
+            case 8:
+                fragment = new DetailView();
+                getActionBar().setDisplayShowHomeEnabled(true);
+                getActionBar().setDisplayHomeAsUpEnabled(true);
         }
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();

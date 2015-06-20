@@ -45,13 +45,42 @@ Elk paneel is min of meer opgebouwd uit 2 bestanden:
 
 In het .java bestand staat beschreven wat het paneel moet doen, terwijl in het .XML bestand staat hoe het paneel is opgebouwd. De hele app bestaat natuurlijk niet uit een hoopje losse panelen, hier zit samenhang tussen. Deze is als volgt opgebouwd:
 
-Home.java en activity_home.XML zijn het inlogscherm. Hier komt de gebruiker als eerste langs (of niet, hangt ervan af of deze als is ingelogd). Omdat dit tot nu toe een horizontaal prototype is, verwijst de "Registreer" knop rechtstreeks door naar MainActivity.java en zijn bijbehorende activity_main.XML. MainActivity.java is de basis voor de hele app. In MainActivity.java zit namelijk het menu zelf ingebouwd, en niet in elk .java bestand zoals je misschien zou denken. Het principe is hetzelfde als bij website en iFrames. Het menu bevindt zich op één plek (MainActivity.java) en verandert dus niet wanneer je in het menu op een ander scherm klikt. De inhoud echter (alles onder de ActionBar), verandert wel. 
+Home.java en activity_home.XML zijn het inlogscherm. Hier komt de gebruiker als eerste langs (of niet, hangt ervan af of deze als is ingelogd). Omdat dit tot nu toe een horizontaal prototype is, verwijst de "Registreer" knop rechtstreeks door naar MainActivity.java en zijn bijbehorende activity_main.XML. MainActivity.java is de basis voor de hele app. In MainActivity.java zit namelijk het menu zelf ingebouwd, en niet in elk .java bestand zoals je misschien zou denken. Het principe is hetzelfde als bij website en iFrames in html. Het menu bevindt zich op één plek (MainActivity.java) en verandert dus niet wanneer je in het menu op een ander scherm klikt. De inhoud echter (alles onder de ActionBar), verandert wel. 
 
 Dit stuk dat wel verandert, heet een Fragment. Vandaar dat je in bijvoorbeeld HomeActivity of MijnOverzicht ook ziet staan:
 ``` java
   public class HomeActivity extends Fragment
 ```
 Dit wil zeggen dat elk paneel dat in het menu staat een uitbreiding is van een standaard Fragment. Door dit principe hoef je niet steeds het menu steeds opnieuw te maken. Ook verandert de titel automatisch mee.
+
+Dan nog even een korte uitleg van alle .java classes en methodes zoals wij die tot nu toe hebben:
+* Home: Dit is het registratiescherm en ook het eerste scherm wat de gebruiker ziet. In deze klasse zitten de volgende methodes:
+ * onCreate: De methode die wordt aangeroepen wanneer de activity wordt gemaakt. Hierin wordt het splash screen getoond.
+ * Continue: Komt in actie wanneer de gebruiker op de "Registreren" knop drukt en stuurt hem door naar het volgende scherm via een intent.
+* MainActivity: Dit is de grootste klasse in Lassie. Hierin wordt het menu en de actionbar gemaakt en bepaald welk fragment aan de beurt is om te laten zien. Omdat een hamburgermenu maken best lastig is, hebben wij gebruik gemaakt van de tutorial van Android Developer gebruik gemaakt.
+ * onCreate: Wordt aangeroepen wanneer MainActivity aangeroepen wordt. In onCreate zitten nog enkele methodes die helpen met het menu (de 'drawer') en de fragments.
+ * onCreateOptions: Een standaard methode die wordt aangeroepen wanneer de opties in de action bar worden aangemaakt (zoals de settings in overflow).
+ * onOptionsSelected: Wordt aangeroepen wanneer de gebruiker op een item uit de action bar klikt en zorgt ervoor dat er dan iets mee gedaan wordt.
+ * actionSettings: Wanneer er op settings wordt gedrukt in de action bar, verwijs dan door naar de fragment 'Instellingen'.
+ * onPrepareOptions: Zorgt ervoor dat als het menu geopend is, er geen items op de action bar te zien zijn.
+ * onPostCreate: Synchroniseert de status van de 'hamburger' nadat onRestoreInstanceState heeft plaatsgevonden
+ * onConfigurationChanged: Wordt aangeroepen wanneer er iets in de configuratie van de app veranderd is. Dat wil zeggen, er wordt op de menu knop geklikt.
+ * selecteerFragment: Deze methode krijgt van DrawerItemClickListener binnen op welke fragment er is geklikt (1-7). SelecteerFragment zorgt er dan voor dat de inhoud van het scherm (standaard 1 = HomeActivity) wordt vervangen door de fragment waarop geklikt is in het menu.
+ * setTitle: Past de titel in de action bar aan wanneer er van fragment gewisseld wordt.
+ * DrawerItemClickListener: 'Luistert' naar wanneer er op een menu geklikt wordt en geeft dit door aan selectFragment
+* HomeActivity
+* CustomArrayAdapter
+* DetailView
+* Fragment
+* Gebruikerspagina
+* GlobalList
+* Instellingen
+* LijstKaart
+* MijnOverzicht
+* Notificaties
+* PlaatsBerichtGevonden
+* PlaatsBerichtVermissing
+* RoundImage
 
 TL;DR: Het menu hoeft niet meer aan de panelen toegevoegd te worden.
  

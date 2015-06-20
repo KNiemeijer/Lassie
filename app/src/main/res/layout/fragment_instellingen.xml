@@ -1,9 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/instellingen_frame"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
-    <!-- TODO: Invulling geven -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <!-- Account -->
+        <TextView
+            android:id="@+id/textview_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start|top"
+            android:text="@string/textview_account"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textview_gebruikersnaam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_account"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:labelFor="@+id/edittext_gebruikersnaam"
+            android:text="@string/textview_gebruikersnaam"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edittext_gebruikersnaam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textview_gebruikersnaam"
+            android:layout_alignEnd="@+id/switch_nederlands"
+            android:layout_marginStart="10dp"
+            android:ems="7"
+            android:inputType="textPersonName"
+            android:text="@string/textview_gebruikersnaam"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textview_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_gebruikersnaam"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:labelFor="@+id/edittext_email"
+            android:text="@string/textview_email"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edittext_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textview_email"
+            android:layout_alignEnd="@+id/switch_nederlands"
+            android:layout_marginStart="10dp"
+            android:ems="7"
+            android:inputType="textEmailAddress"
+            android:text="@string/textview_email"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textview_wachtwoord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_email"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:labelFor="@+id/edittext_wachtwoord"
+            android:text="@string/textview_wachtwoord"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edittext_wachtwoord"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textview_wachtwoord"
+            android:layout_alignEnd="@+id/switch_nederlands"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="0dp"
+            android:ems="7"
+            android:inputType="textPassword"
+            android:text="@string/textview_wachtwoord"
+            android:textSize="15sp" />
+
+        <!-- Taal -->
+        <TextView
+            android:id="@+id/textview_taal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textview_wachtwoord"
+            android:layout_marginTop="25dp"
+            android:text="@string/textview_taal"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textview_nederlands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_taal"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:text="@string/textview_nederlands"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textview_engels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_nederlands"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:text="@string/textview_engels"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Switch
+            android:id="@+id/switch_nederlands"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textview_nederlands"
+            android:layout_alignBottom="@+id/textview_nederlands"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:checked="true"
+            android:dependency="@+id/switch_engels"
+            android:disableDependentsState="true" />
+
+        <Switch
+            android:id="@+id/switch_engels"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textview_engels"
+            android:layout_alignBottom="@+id/textview_engels"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false"
+            android:dependency="@id/switch_nederlands"
+            android:disableDependentsState="true" />
+
+        <!-- Meldingen -->
+        <TextView
+            android:id="@+id/textview_meldingen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textview_engels"
+            android:layout_marginTop="25dp"
+            android:text="@string/textview_meldingen"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textview_reactie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textview_engels"
+            android:layout_below="@+id/textview_meldingen"
+            android:layout_marginTop="7dp"
+            android:text="@string/textview_reactie"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/textview_volger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textview_reactie"
+            android:layout_marginTop="7dp"
+            android:layout_toEndOf="@+id/textview_taal"
+            android:text="@string/textview_volger"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <Switch
+            android:id="@+id/switch_reactie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textview_reactie"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false" />
+
+        <Switch
+            android:id="@+id/switch_meldingen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/textview_volger"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="center_vertical"
+            android:checked="false" />
+
+        <!-- Opslaan button -->
+        <Button
+            android:id="@+id/button_opslaan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="40dp"
+            android:layout_toEndOf="@+id/textview_nederlands"
+            android:clickable="true"
+            android:text="@string/button_opslaan" />
+
+    </RelativeLayout>
+</FrameLayout>
