@@ -68,19 +68,27 @@ Dan nog even een korte uitleg van alle .java classes en methodes zoals wij die t
  * selecteerFragment: Deze methode krijgt van DrawerItemClickListener binnen op welke fragment er is geklikt (1-7). SelecteerFragment zorgt er dan voor dat de inhoud van het scherm (standaard 1 = HomeActivity) wordt vervangen door de fragment waarop geklikt is in het menu.
  * setTitle: Past de titel in de action bar aan wanneer er van fragment gewisseld wordt.
  * DrawerItemClickListener: 'Luistert' naar wanneer er op een menu geklikt wordt en geeft dit door aan selectFragment
-* HomeActivity
-* CustomArrayAdapter
+* HomeActivity: Deze klasse is het eerste wat de gebruiker ziet nadat hij is ingelogd. Hierin zijn enkele vermiste en gevonden dieren te zien. Vanuit hier kan de gebruiker ook meteen een bericht plaatsen.
+ * De contructor HomeActivity. Deze is leeg.
+ * onCreateView: Wordt aangeroepen wanneer de fragment gecreëerd word. Hierin worden onder andere de ronde plaatjes voor de dieren gecreëerd.
+ * imageviewProfielListener: 'Luistert' wanneer een gebruiker op een plaatje van het dier klikt en stuurt hem door naar de detailview van het betreffende dier.
 * DetailView
-* Fragment
+ * onCreateView: Wordt aangeroepen bij het creëeren van de fragment. Het enige wat hier gebeurt, is het ophalen van de gegevens die DetailView doorgespeeld krijgt van bijvoorbeeld HomeActivity. De gegevens worden uitgepakt en doorgestuurd naar DetailView.xml, waarin het uiterlijk van de fragment wordt bepaald. 
+* MijnOverzicht: Dit is het overzicht van de activiteiten van de gebruiker. MijnOverzicht bevat zowel 'Mijn vermissingen' als 'Mijn berichten'. Beiden zitten in dezelfde klasse en het enige wat ze opdeeld is de stand van de togglebuttons bovenaan in de pagina.
+ * onCreateView: Wordt aangeroepen bij het creëeren van de fragment. Hierin wordt wordt gezorgd dat maar één 'togglebutton' tegelijk aan kan staan en wordt het ronde plaatje van 'Mijn vermissingen' aangemaakt.
+ * checkElements: Hierin staat het principe van MijnOverzicht. Als de togglebutton 'Mijn vermissingen' actief is, verberg dan alle onderdelen van 'Mijn berichten' en laat de andere onderdelen zien. Als de togglebutton 'Mijn berichten' actief is, doe dan het tegenovergestelde. Het feit dat er maar één togglebutton tegelijk actief kan zijn, wordt geregeld in de onCreateView methode.
+ * imageviewProfielListener: 'Luistert' of de gebruiker op een plaatje van een dier klikt en stuurt de gebruiker door naar de detailview van het dier.
+ * buttonClickListener: 'Luistert' of de gebruiker op de 'Details' knop van een dier klikt en stuurt de gebruiker door naar de detailview van het dier. De gebruiker heeft zo twee mogelijkheden om naar de detailview te gaan.
 * Gebruikerspagina
-* GlobalList
 * Instellingen
 * LijstKaart
-* MijnOverzicht
 * Notificaties
 * PlaatsBerichtGevonden
 * PlaatsBerichtVermissing
-* RoundImage
+* Fragment
+* GlobalList
+* CustomArrayAdapter
+* RoundImage: Een klassie die bitmaps omzet naar ronde drawables. Geschreven door githubgebruiker vinc3m1. Zie ook: https://github.com/vinc3m1/RoundedImageView
 
 TL;DR: Het menu hoeft niet meer aan de panelen toegevoegd te worden.
  

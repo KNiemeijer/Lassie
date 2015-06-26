@@ -2,17 +2,20 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="lassie.lassie" >
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:logo="@drawable/logo"
         android:theme="@style/Theme.AppCompat.Light" >
+
         <activity
             android:name=".Home"
             android:icon="@drawable/logo"
             android:label="@string/app_name"
             android:logo="@drawable/logo">
+            android:allowBackup="true"
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
