@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/imageview_upload"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription=""
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_border_collie"
+        />
+
+    <TextView
+        android:id="@+id/textview_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageview_upload"
+        android:layout_centerHorizontal="true"
+        android:text="Foto uploaden"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/edittext_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_rassoort"
+        android:layout_below="@+id/textview_upload"
+        android:layout_marginTop="28dp"
+        android:text=" Drol"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp"
+        android:ems="10" />
+
+    <TextView
+        android:id="@+id/textview_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edittext_naam"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:labelFor="@id/edittext_naam"
+        android:text="Naam:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_rassoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_kleur"
+        android:layout_alignTop="@+id/textview_rassoort"
+        android:text=" schijthond"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/textview_rassoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext_naam"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:labelFor="@id/edittext_rassoort"
+        android:text="Ras/soort dier:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_kleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_eigenschappen"
+        android:layout_below="@+id/edittext_rassoort"
+        android:text=" poepbruin"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/textview_kleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_below="@+id/edittext_rassoort"
+        android:labelFor="@id/edittext_kleur"
+        android:text="@string/textview_kleur"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_eigenschappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_send"
+        android:layout_below="@+id/edittext_kleur"
+        android:text=" houdt van poepseks"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp"
+        />
+
+    <TextView
+        android:id="@+id/textview_eigenschappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edittext_eigenschappen"
+        android:layout_toStartOf="@+id/edittext_kleur"
+        android:labelFor="@id/edittext_eigenschappen"
+        android:text="Eigenschappen:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edittext_eigenschappen"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:background="#ff009688"
+        android:text="Bewerk"
+        android:onClick="bewerkBericht"/>
+
+
+
+</RelativeLayout>
