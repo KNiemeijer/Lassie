@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -207,6 +208,10 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
                 fragment = new DetailView();
                 getActionBar().setDisplayShowHomeEnabled(true);
                 getActionBar().setDisplayHomeAsUpEnabled(true);
+                break;
+            case 9:
+                fragment = new BerichtGevonden();
+                break;
         }
         if (fragment != null) {
             FragmentManager fragmentManager = getFragmentManager();
@@ -215,8 +220,15 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
 
             // update selected item and title, then close the drawer
             menuLijst.setItemChecked(position, true);
-            menuLijst.setSelection(position);
-            setTitle(menuItems[position]);
+            if (position == 9)
+            {
+                setTitle(menuItems[3]);
+            }
+            else
+            {
+                menuLijst.setSelection(position);
+                setTitle(menuItems[position]);
+            }
             menuLayout.closeDrawer(menuLijst);
         } else {
             // Vangt de fout op als de fragment niet bestaat
@@ -240,6 +252,11 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
             selecteerFragment(position);
         }
     }
+
+        public void verstuurBericht(View view) {
+            selecteerFragment(9); //hier moet dus fragment(9) komen
+        }
+
 
 }
 

@@ -45,7 +45,8 @@
     <string name="textview_kleur">Kleur:</string>
     <string name="textview_eigenschappen">Kenmerk:</string>
     <string name="button_reageer">Reageer</string>
-
+    <string name="bewerk">Bewerken</string>
+    <string name="button_send">Plaatsen</string>
 
     <!-- Menu items -->
     <string-array name="menu_items">
