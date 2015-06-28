@@ -114,6 +114,44 @@ Het idee voor de database (in ieder geval voor de lijst), is dat elk plaatje een
    }
 ```
 
+De database is opgebouwd uit 4 klassen:
+* Database
+* Gebruiker
+* Dier
+* Bericht
+
+In de klasse Database wordt de database zelf gemaakt. Als het goed is, hoeft hier niks of bijna niks aan veranderd te worden.
+De klassen Gebruiker, Dier en Bericht zijn objecten. Elk van deze objecten is voorzien van de nodige methoden. Voor Gebruiker is dit:
+* addGebruiker(Gebruiker gebruiker)
+* getGebruiker(int id)
+* getAllGebruikers()
+* updateGebruiker(Gebruiker gebruiker)
+* deleteGebruiker(Gebruiker gebruiker)
+
+Dezelfde methodes bestaan voor Dier en Bericht, maar dan met een andere naam. Om een van de methodes te gebruiken, moet je in de meeste gevallen eerst een object (bijvoorbeeld een Gebruiker) aanmaken. Dit kun je doen door te zeggen
+``` java
+Gebruiker geberuiker = new Gebruiker();
+```
+Dan is nog de vraag wat je als parameters mee moet geven. Het is eigenlijk heel simpel: als ie in een foutmelding geeft dat je de verkeerde parameters gebruikt hebt, ga je naar de klasse toe en maak je een constructor die wél de goede parameters heeft. 
+
+Dan nog een voorbeeldje van hoe je bijvoorbeeld een nieuwe gebruiker aan kan maken:
+``` java
+
+public class ...
+Database db;
+
+    // Constructor
+
+   // Nog wat andere methodes
+
+   private void mijnMethode() {
+        Gebruiker gebruiker = new Gebruiker(((EditText) findViewById(R.id.edittext_gebruikersnaam)).getText().toString(),
+                ((EditText) findViewById(R.id.edittext_wachtwoord)).getText().toString(),
+                ((EditText) findViewById(R.id.edittext_email)).getText().toString());
+        db.addGebruiker(gebruiker);
+   }
+```
+
 ## FAQ
 ### Hoe test ik de app?
  Om de app te testen, moet je hem afspelen op een zogenaamde emulator. De computer simuleert een telefoon, waardoor de app
