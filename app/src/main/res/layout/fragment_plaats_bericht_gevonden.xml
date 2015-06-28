@@ -107,10 +107,12 @@
         android:id="@+id/button_send"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/edittext_eigenschappen"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:layout_below="@+id/edittext_eigenschappen"
+
         android:layout_marginTop="10dp"
-        android:background="#ff009688"
+        android:background="@color/onze_kleur"
 
         android:padding="10dp"
         android:text="@string/button_send"

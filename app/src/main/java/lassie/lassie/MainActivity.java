@@ -254,7 +254,8 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
     }
 
         public void verstuurBericht(View view) {
-            selecteerFragment(9); //hier moet dus fragment(9) komen
+
+            selecteerFragment(9);
         }
 
 

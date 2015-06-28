@@ -1,4 +1,4 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/red" android:state_checked="false" />
-    <item android:drawable="@color/darkred" android:state_checked="true" />
+    <item android:drawable="@color/onze_kleur" android:state_checked="true" />
+    <item android:drawable="@color/lightgrey" android:state_checked="false" />
 </selector>

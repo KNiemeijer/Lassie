@@ -2,7 +2,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal" >
+    android:orientation="vertical" >
+
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@color/onze_kleur"
+        android:text="Bewerk"
+        android:onClick="bewerkBericht"
+        />
 
     <ImageView
         android:id="@+id/imageview_upload"
@@ -112,18 +124,6 @@
         android:text="Eigenschappen:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/button_send"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/edittext_eigenschappen"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="#ff009688"
-        android:text="Bewerk"
-        android:onClick="bewerkBericht"/>
-
 
 
 </RelativeLayout>
