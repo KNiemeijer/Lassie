@@ -24,9 +24,10 @@ public class Dier {
     public Dier() {
     }
 
-    public Dier(int dier_ID, String naam, String ras, String geslacht, String kleur, String status, int gebruiker_ID) {
+    public Dier(int dier_ID, String naam, String diersoort, String ras, String geslacht, String kleur, String status, int gebruiker_ID) {
         super();
         this.dier_ID = dier_ID;
+        this.diersoort = diersoort;
         this.naam = naam;
         this.ras = ras;
         this.geslacht = geslacht;

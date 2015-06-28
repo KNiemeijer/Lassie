@@ -3,13 +3,16 @@ package lassie.lassie;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.ToggleButton;
+
+import java.util.List;
 
 public class HomeActivity extends Fragment {
 
@@ -31,7 +34,7 @@ public class HomeActivity extends Fragment {
         fragmentview = inflater.inflate(R.layout.fragment_home_activity, container, false);
 
         // Rond profiel aanmaken Zoef
-        imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_profiel);
+   /*     imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_profiel);
         Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_hond_voorbeeld);
         roundedImage = new RoundImage(bm);
         imageview_profiel.setImageDrawable(roundedImage);
@@ -65,6 +68,24 @@ public class HomeActivity extends Fragment {
         kleur = "Wit met grijs";
         eigenschappen = "Reageert op zijn naam";
         imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
+        */
+
+        Database db = new Database(getActivity());
+        List<Dier> dieren = db.getAllDieren();
+
+        String i;
+        for (Dier dier : dieren) {
+            int t = 1;
+            while (t < 4) {
+                Dier diertemp = dieren.get(t - 1);
+                i = "textview_dier";
+                i += t;
+                int resID = getResources().getIdentifier(i, "id", "lassie.lassie");
+                TextView textview = (TextView) fragmentview.findViewById(resID);
+                textview.setText(diertemp.getNaam() + "\n" + diertemp.getRas() + "\n" + diertemp.getKleur());
+                t++;
+            }
+        }
 
         final ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
 
@@ -88,6 +109,18 @@ public class HomeActivity extends Fragment {
         });
 
         //  tekenen();
+        final Button plaatsBericht = (Button) fragmentview.findViewById(R.id.button_plaats_bericht);
+        // Klik event plaats bericht button
+        plaatsBericht.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment fragment = new PlaatsBerichtGevonden();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction()
+                        .addToBackStack("PlaatsBerichtGevonden").replace(R.id.frame_container, fragment).commit();
+
+            }
+        });
         return fragmentview;
     }
 
@@ -111,6 +144,7 @@ public class HomeActivity extends Fragment {
             }
         });
     }
+
 
     // Methode voor meerdere plaatjes naast elkaar plaatsen (reeks {1,2,3...n} ).
   /*      public void tekenen () {

@@ -5,15 +5,19 @@ public class Gebruiker {
     private static final String TABLE_GEBRUIKER = "GEBRUIKER";
     // Gebruikers Table Columns names
     private static final String GEBRUIKER_GEBRUIKER_ID = "gebruiker_ID";
+    private static final String GEBRUIKER_GEBRUIKERSNAAM = "gebruikersnaam";
+    private static final String GEBRUIKER_WACHTWOORD = "wachtwoord";
     private static final String GEBRUIKER_VOORNAAM = "voornaam";
     private static final String GEBRUIKER_TUSSENVOEGSEL = "tussenvoegsel";
     private static final String GEBRUIKER_ACHTERNAAM = "achternaam";
     private static final String GEBRUIKER_STAD = "stad";
     private static final String GEBRUIKER_EMAIL = "email";
     private static final String GEBRUIKER_TELEFOONNUMMER = "telefoonnummer";
-    private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
+    private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_GEBRUIKERSNAAM, GEBRUIKER_WACHTWOORD, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
             GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER};
     private int gebruiker_ID;
+    private String gebruikersnaam;
+    private String wachtwoord;
     private String voornaam;
     private String tussenvoegsel;
     private String achternaam;
@@ -24,9 +28,18 @@ public class Gebruiker {
     public Gebruiker() {
     }
 
-    public Gebruiker(int gebruiker_ID, String voornaam, String achternaam, String stad, String email, String telefoonnummer) {
+    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String email) {
+        this.gebruiker_ID = gebruiker_ID;
+        this.gebruikersnaam = gebruikersnaam;
+        this.wachtwoord = wachtwoord;
+        this.email = email;
+    }
+
+    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String achternaam, String stad, String email, String telefoonnummer) {
         super();
         this.gebruiker_ID = gebruiker_ID;
+        this.gebruikersnaam = gebruikersnaam;
+        this.wachtwoord = wachtwoord;
         this.voornaam = voornaam;
         this.achternaam = achternaam;
         this.stad = stad;
@@ -34,9 +47,11 @@ public class Gebruiker {
         this.telefoonnummer = telefoonnummer;
     }
 
-    public Gebruiker(int gebruiker_ID, String voornaam, String tussenvoegsel, String achternaam, String stad, String email, String telefoonnummer) {
+    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String tussenvoegsel, String achternaam, String stad, String email, String telefoonnummer) {
         super();
         this.gebruiker_ID = gebruiker_ID;
+        this.gebruikersnaam = gebruikersnaam;
+        this.wachtwoord = wachtwoord;
         this.voornaam = voornaam;
         this.tussenvoegsel = tussenvoegsel;
         this.achternaam = achternaam;
@@ -53,6 +68,23 @@ public class Gebruiker {
 
     public void setGebruiker_ID(int gebruiker_ID) {
         this.gebruiker_ID = gebruiker_ID;
+    }
+
+
+    public String getGebruikersnaam() {
+        return gebruikersnaam;
+    }
+
+    public void setGebruikersnaam(String gebruikersnaam) {
+        this.gebruikersnaam = gebruikersnaam;
+    }
+
+    public String getWachtwoord() {
+        return wachtwoord;
+    }
+
+    public void setWachtwoord(String wachtwoord) {
+        this.wachtwoord = wachtwoord;
     }
 
     public String getVoornaam() {

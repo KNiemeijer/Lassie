@@ -11,6 +11,7 @@ import android.widget.EditText;
 
 public class Home extends Activity {
     public final static String gebruikersnaammessage = Home.gebruikersnaammessage;
+    Database db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +30,28 @@ public class Home extends Activity {
                 setTitle("Lassie");
             }
         }.start();
-        Database db = new Database(this);
+        getApplicationContext().deleteDatabase("LassieDB");
+        db = new Database(this);
+
+
     }
 
     public void Continue(View view) {
+        int gebruikerID = 1;
+        Gebruiker gebruiker = new Gebruiker(gebruikerID, ((EditText) findViewById(R.id.edittext_gebruikersnaam)).getText().toString(),
+                ((EditText) findViewById(R.id.edittext_wachtwoord)).getText().toString(),
+                ((EditText) findViewById(R.id.edittext_email)).getText().toString());
+        db.addGebruiker(gebruiker);
+
+        Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", 0);
+        db.addDier(dier);
+        dier = new Dier(2, "Lassie", "Hond", "Collie", "Man", "Bruin met wit", "Vermist", 0);
+        db.addDier(dier);
+        dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", 0);
+        db.addDier(dier);
+
         Intent intent = new Intent(this, MainActivity.class);
-        EditText gebruikersnaam = (EditText) findViewById(R.id.edittext_gebruikersnaam);
-        String gebruikersnaamgegevens = gebruikersnaam.getText().toString();
-        intent.putExtra(gebruikersnaammessage, gebruikersnaamgegevens);
+        intent.putExtra("gebruikerID", gebruikerID);
         startActivity(intent);
     }
 }

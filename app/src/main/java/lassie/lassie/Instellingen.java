@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.Switch;
 
 public class Instellingen extends Fragment {
@@ -35,6 +36,12 @@ public class Instellingen extends Fragment {
                     taalNederlands.toggle();
         }}); */
 
+        EditText gebruikersnaam = (EditText) fragmentview.findViewById(R.id.edittext_gebruikersnaam);
+        gebruikersnaam.setText(new Database(getActivity()).getGebruiker(((MainActivity) getActivity()).getGebruikersID()).getGebruikersnaam());
+        EditText email = (EditText) fragmentview.findViewById(R.id.edittext_email);
+        email.setText(new Database(getActivity()).getGebruiker(((MainActivity) getActivity()).getGebruikersID()).getEmail());
+        EditText wachtwoord = (EditText) fragmentview.findViewById(R.id.edittext_wachtwoord);
+        wachtwoord.setText(new Database(getActivity()).getGebruiker(((MainActivity) getActivity()).getGebruikersID()).getWachtwoord());
         return fragmentview;
 
     }

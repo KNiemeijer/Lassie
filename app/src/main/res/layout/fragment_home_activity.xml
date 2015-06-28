@@ -15,9 +15,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="28dp"
+        android:background="@color/onze_kleur"
+        android:clickable="true"
         android:padding="10dp"
-        android:text="@string/button_plaats_bericht"
-        android:background="@color/onze_kleur"/>
+        android:text="@string/button_plaats_bericht" />
 
 
     <LinearLayout
@@ -82,14 +83,14 @@
                 android:src="@drawable/ic_hond_voorbeeld" />
 
             <TextView
-                android:id="@+id/textview_gegevens_hond_voorbeeld"
+                android:id="@+id/textview_dier1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="100dp"
                 android:layout_toEndOf="@+id/textview_status_zoef"
-                android:text="@string/textview_gegevens_hond_voorbeeld"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -115,7 +116,7 @@
                 android:src="@drawable/ic_lassie" />
 
             <TextView
-                android:id="@+id/textview_gegevens_lassie"
+                android:id="@+id/textview_dier2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -123,7 +124,7 @@
                 android:layout_marginBottom="100dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toEndOf="@+id/textview_status_lassie"
-                android:text="@string/textview_gegevens_lassie"
+                android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView
@@ -149,14 +150,13 @@
                 android:src="@drawable/ic_kat_voorbeeld" />
 
             <TextView
-                android:id="@+id/textview_gegevens_frank"
+                android:id="@+id/textview_dier3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
                 android:layout_marginBottom="100dp"
                 android:layout_toEndOf="@+id/textview_status_frank"
-                android:text="@string/textview_gegevens_kat_voorbeeld"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <TextView

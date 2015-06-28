@@ -15,13 +15,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 
 public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated, maar we moeten hem toch gebruiken
 
+    public int gebruikersID;
+    public int dierID;
     private String[] menuItems;
     private DrawerLayout menuLayout;
     private ListView menuLijst;
@@ -39,9 +39,7 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         setTitle("Lassie");
         Intent intent = getIntent();
         String emailMessage = intent.getStringExtra(Home.gebruikersnaammessage);
-        TextView email = new TextView(this);
-        email.setTextSize(40);
-        email.setText(emailMessage);
+        gebruikersID = intent.getIntExtra("gebruikerID", 1);
         assert getSupportActionBar() != null;
         getSupportActionBar().setDisplayUseLogoEnabled(true);
 
@@ -245,6 +243,19 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         }
     }
 
+    public void verstuurBericht(View view) {
+
+        selecteerFragment(9);
+        }
+
+    public int getGebruikersID() {
+        return gebruikersID;
+    }
+
+    public int getDierID() {
+        return dierID;
+    }
+
     // 'Luister' naar wanneer er op een menu geklikt wordt en geeft dit door aan selectFragment
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
@@ -252,12 +263,6 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
             selecteerFragment(position);
         }
     }
-
-        public void verstuurBericht(View view) {
-
-            selecteerFragment(9);
-        }
-
 
 }
 

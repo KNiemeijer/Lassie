@@ -15,30 +15,29 @@ public class Database extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "LassieDB";
     private static final String TABLE_GEBRUIKER = "GEBRUIKER";
-    //   private static final String TABLE_GEBRUIKER_PASS = "GEBRUIKER_PASS";
     private static final String TABLE_DIER = "DIER";
     private static final String TABLE_BERICHT = "BERICHT";
     // kolom namen GEBRUIKER
     private static final String GEBRUIKER_GEBRUIKER_ID = "gebruiker_ID";
+    private static final String GEBRUIKER_GEBRUIKERSNAAM = "gebruikersnaam";
+    private static final String GEBRUIKER_WACHTWOORD = "wachtwoord";
     private static final String GEBRUIKER_VOORNAAM = "voornaam";
     private static final String GEBRUIKER_TUSSENVOEGSEL = "tussenvoegsel";
     private static final String GEBRUIKER_ACHTERNAAM = "achternaam";
     private static final String GEBRUIKER_STAD = "stad";
     private static final String GEBRUIKER_EMAIL = "email";
     private static final String GEBRUIKER_TELEFOONNUMMER = "telefoonnummer";
+
     // Kolom namen DIER
     private static final String DIER_ID = "dier_ID";
     private static final String DIER_NAAM = "naam";
     private static final String DIER_DIERSOORT = "diersoort";
-
-    // Kolom namen GEBRUIKER_PASS
-//    private static final String GEBRUIKER_PASS_EMAIL = "email";
-//    private static final String GEBRUIKER_PASS_WACHTWOORD = "wachtwoord";
     private static final String DIER_RAS = "ras";
     private static final String DIER_GESLACHT = "geslacht";
     private static final String DIER_KLEUR = "kleur";
     private static final String DIER_STATUS = "status";
     private static final String DIER_GEBRUIKER_ID = "gebruiker_ID";
+
     // Kolom namen BERICHT
     private static final String BERICHT_BERICHT_ID = "bericht_ID";
     private static final String BERICHT_DIER_ID = "dier_ID";
@@ -46,7 +45,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String BERICHT_DATUM = "datum";
     private static final String BERICHT_POSTCODE = "postcode";
     private static final String BERICHT_BERICHT = "bericht";
-    private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
+    private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_GEBRUIKERSNAAM, GEBRUIKER_WACHTWOORD, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
             GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER};
     //    private static final String[] GebruikersPassKolom = {GEBRUIKER_PASS_EMAIL, GEBRUIKER_PASS_WACHTWOORD};
     private static final String[] DierKolom = {DIER_ID, DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_GEBRUIKER_ID};
@@ -61,21 +60,16 @@ public class Database extends SQLiteOpenHelper {
         String SQL_CREATE_ENTRIES_GEBRUIKER =
                 "CREATE TABLE GEBRUIKER (" +
                         "gebruiker_ID INTEGER NOT NULL," +
+                        "gebruikersnaam VARCHAR(20) NOT NULL, " +
+                        "wachtwoord VARCHAR (30) NOT NULL, " +
                         "voornaam VARCHAR(20)," +
                         "tussenvoegsel VARCHAR (10)," +
                         "achternaam VARCHAR(30)," +
-                        "stad VARCHAR (30) NOT NULL," +
+                        "stad VARCHAR (30)," +
                         "email VARCHAR(70)," +
-                        "telefoonnummer INTEGER NOT NULL," +
+                        "telefoonnummer INTEGER," +
                         "PRIMARY KEY (gebruiker_ID)" +
                         ");";
- /*       String SQL_CREATE_ENTRIES_GEBRUIKER_PASS =
-                "CREATE TABLE GEBRUIKER_PASS (" +
-                        "email VARCHAR (30) NOT NULL," +
-                        "wachtwoord VARCHAR(20) NOT NULL," +
-                        "PRIMARY KEY (email)" +
-                        "FOREIGN KEY (email) REFERENCES GEBRUIKER (email)" +
-                        ");"; */
         String SQL_CREATE_ENTRIES_DIER =
                 "CREATE TABLE DIER (" +
                         "dier_ID INTEGER NOT NULL," +
@@ -100,7 +94,6 @@ public class Database extends SQLiteOpenHelper {
                         "FOREIGN KEY (gebruiker_ID) REFERENCES GEBRUIKER (gebruikers_ID)" +
                         ");";
         db.execSQL(SQL_CREATE_ENTRIES_GEBRUIKER);
-        //      db.execSQL(SQL_CREATE_ENTRIES_GEBRUIKER_PASS);
         db.execSQL(SQL_CREATE_ENTRIES_DIER);
         db.execSQL(SQL_CREATE_ENTRIES_BERICHT);
     }
@@ -120,6 +113,8 @@ public class Database extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
         values.put(GEBRUIKER_GEBRUIKER_ID, gebruiker.getGebruiker_ID());
+        values.put(GEBRUIKER_GEBRUIKERSNAAM, gebruiker.getGebruikersnaam());
+        values.put(GEBRUIKER_WACHTWOORD, gebruiker.getWachtwoord());
         values.put(GEBRUIKER_VOORNAAM, gebruiker.getVoornaam());
         values.put(GEBRUIKER_TUSSENVOEGSEL, gebruiker.getTussenvoegsel());
         values.put(GEBRUIKER_ACHTERNAAM, gebruiker.getAchternaam());
@@ -129,7 +124,7 @@ public class Database extends SQLiteOpenHelper {
 
 
         db.insert(TABLE_GEBRUIKER,
-                null,
+                "",
                 values);
         db.close();
     }
@@ -154,12 +149,14 @@ public class Database extends SQLiteOpenHelper {
         // 4. build gebruiker object
         Gebruiker gebruiker = new Gebruiker();
         gebruiker.setGebruiker_ID(Integer.parseInt(cursor.getString(0)));
-        gebruiker.setVoornaam(cursor.getString(1));
-        gebruiker.setTussenvoegsel(cursor.getString(2));
-        gebruiker.setAchternaam(cursor.getString(3));
-        gebruiker.setStad(cursor.getString(4));
-        gebruiker.setEmail(cursor.getString(5));
-        gebruiker.setTelefoonnummer(cursor.getString(6));
+        gebruiker.setGebruikersnaam(cursor.getString(1));
+        gebruiker.setWachtwoord(cursor.getString(2));
+        gebruiker.setVoornaam(cursor.getString(3));
+        gebruiker.setTussenvoegsel(cursor.getString(4));
+        gebruiker.setAchternaam(cursor.getString(5));
+        gebruiker.setStad(cursor.getString(6));
+        gebruiker.setEmail(cursor.getString(7));
+        gebruiker.setTelefoonnummer(cursor.getString(8));
 
         Log.d("getGebruiker(" + id + ")", gebruiker.toString());
         return gebruiker;
@@ -177,12 +174,14 @@ public class Database extends SQLiteOpenHelper {
             do {
                 gebruiker = new Gebruiker();
                 gebruiker.setGebruiker_ID(Integer.parseInt(cursor.getString(0)));
-                gebruiker.setVoornaam(cursor.getString(1));
-                gebruiker.setTussenvoegsel(cursor.getString(2));
-                gebruiker.setAchternaam(cursor.getString(3));
-                gebruiker.setStad(cursor.getString(4));
-                gebruiker.setEmail(cursor.getString(5));
-                gebruiker.setTelefoonnummer(cursor.getString(6));
+                gebruiker.setGebruikersnaam(cursor.getString(1));
+                gebruiker.setWachtwoord(cursor.getString(2));
+                gebruiker.setVoornaam(cursor.getString(3));
+                gebruiker.setTussenvoegsel(cursor.getString(4));
+                gebruiker.setAchternaam(cursor.getString(5));
+                gebruiker.setStad(cursor.getString(6));
+                gebruiker.setEmail(cursor.getString(7));
+                gebruiker.setTelefoonnummer(cursor.getString(8));
 
                 gebruikers.add(gebruiker);
             } while (cursor.moveToNext());
@@ -201,6 +200,8 @@ public class Database extends SQLiteOpenHelper {
         // 2. create ContentValues to add key "column"/value
         ContentValues values = new ContentValues();
         values.put(GEBRUIKER_GEBRUIKER_ID, gebruiker.getGebruiker_ID());
+        values.put(GEBRUIKER_GEBRUIKERSNAAM, gebruiker.getGebruikersnaam());
+        values.put(GEBRUIKER_WACHTWOORD, gebruiker.getWachtwoord());
         values.put(GEBRUIKER_VOORNAAM, gebruiker.getVoornaam());
         values.put(GEBRUIKER_TUSSENVOEGSEL, gebruiker.getTussenvoegsel());
         values.put(GEBRUIKER_ACHTERNAAM, gebruiker.getAchternaam());
@@ -475,4 +476,5 @@ public class Database extends SQLiteOpenHelper {
         Log.d("deleteGebruiker", bericht.toString());
 
     }
+
 }
