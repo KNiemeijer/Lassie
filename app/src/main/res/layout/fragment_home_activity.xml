@@ -71,7 +71,7 @@
 
             <!-- Zoef -->
             <ImageView
-                android:id="@+id/imageview_profiel"
+                android:id="@+id/imageview_dier1"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -79,8 +79,7 @@
                 android:layout_marginStart="120dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_hond_voorbeeld" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/textview_dier1"
@@ -104,7 +103,7 @@
 
             <!-- Lassie -->
             <ImageView
-                android:id="@+id/imageview_lassie"
+                android:id="@+id/imageview_dier2"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -112,8 +111,7 @@
                 android:layout_marginStart="370dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_lassie" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/textview_dier2"
@@ -138,7 +136,7 @@
 
             <!-- Frank -->
             <ImageView
-                android:id="@+id/imageview_frank"
+                android:id="@+id/imageview_dier3"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_gravity="center"
@@ -146,8 +144,7 @@
                 android:layout_marginStart="620dp"
                 android:clickable="true"
                 android:contentDescription="@string/contentdescription_profiel"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_kat_voorbeeld" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/textview_dier3"

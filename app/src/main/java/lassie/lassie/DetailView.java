@@ -29,6 +29,22 @@ public class DetailView extends Fragment {
         roundedImage = new RoundImage(profiel);
         imageview_profiel.setImageDrawable(roundedImage);
 
+        Database db = new Database(getActivity());
+        int dier_ID = extras.getInt("dier_ID");
+        Dier dier = db.getDier(dier_ID);
+
+        TextView textview_naam = (TextView) fragmentview.findViewById(R.id.textview_naam_content);
+        TextView textview_ras = (TextView) fragmentview.findViewById(R.id.textview_ras_content);
+        TextView textview_kleur = (TextView) fragmentview.findViewById(R.id.textview_kleur_content);
+        TextView textview_eigenschappen = (TextView) fragmentview.findViewById(R.id.textview_eigenschappen_content);
+
+        textview_naam.setText(dier.getNaam());
+        textview_ras.setText(dier.getRas());
+        textview_kleur.setText(dier.getKleur());
+        textview_eigenschappen.setText(dier.getDiersoort() + dier.getGeslacht());
+        getActivity().setTitle(dier.getNaam());
+
+
  /*       // Status ophalen en invoegen
         String status = extras.getString("status");
         TextView statusTekst = (TextView) fragmentview.findViewById(R.id.textview_status);
@@ -42,7 +58,7 @@ public class DetailView extends Fragment {
 
         else {
             statusTekst.setBackgroundColor(getResources().getColor(R.color.black));
-        } */
+        }
 
         // Naam, ras, kleur, eigenschappen ophalen en invoegen
         TextView textview_naam = (TextView) fragmentview.findViewById(R.id.textview_naam_content);
@@ -60,7 +76,7 @@ public class DetailView extends Fragment {
         textview_kleur.setText(kleur);
         textview_eigenschappen.setText(eigenschappen);
 
-        getActivity().setTitle(naam);
+        getActivity().setTitle(naam); */
         return fragmentview;
 
     }

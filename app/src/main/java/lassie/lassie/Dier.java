@@ -106,6 +106,6 @@ public class Dier {
     public String toString() {
         return "DIER [Dier_ID = " + dier_ID + ", naam = " + naam + ", diersoort = " + diersoort + ", ras = "
                 + ras + ", geslacht = " + geslacht + ", kleur = " + kleur + ", status = " + status
-                + ", gebruiker_ID" + gebruiker_ID + "]";
+                + ", gebruiker_ID = " + gebruiker_ID + "]";
     }
 }

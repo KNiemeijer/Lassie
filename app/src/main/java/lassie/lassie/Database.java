@@ -85,11 +85,13 @@ public class Database extends SQLiteOpenHelper {
                         ");";
         String SQL_CREATE_ENTRIES_BERICHT =
                 "CREATE TABLE BERICHT (" +
+                        "bericht_ID INTEGER," +
                         "dier_ID INTEGER," +
                         "gebruiker_ID INTEGER," +
                         "datum DATE," +
                         "postcode VARCHAR(7)," +
-                        "bericht_ID VARCHAR(50)," +
+                        "bericht VARCHAR(200)," +
+                        "PRIMARY KEY(bericht_ID)" +
                         "FOREIGN KEY (dier_ID) REFERENCES DIER (dier_ID)," +
                         "FOREIGN KEY (gebruiker_ID) REFERENCES GEBRUIKER (gebruikers_ID)" +
                         ");";

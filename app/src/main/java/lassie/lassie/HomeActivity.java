@@ -3,6 +3,7 @@ package lassie.lassie;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,11 +18,6 @@ import java.util.List;
 public class HomeActivity extends Fragment {
 
     View fragmentview;
-    String status;
-    String naam;
-    String ras;
-    String kleur;
-    String eigenschappen;
 
     public HomeActivity() {
     }
@@ -29,46 +25,8 @@ public class HomeActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        ImageView imageview_profiel;
-        RoundImage roundedImage;
+
         fragmentview = inflater.inflate(R.layout.fragment_home_activity, container, false);
-
-        // Rond profiel aanmaken Zoef
-   /*     imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_profiel);
-        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_hond_voorbeeld);
-        roundedImage = new RoundImage(bm);
-        imageview_profiel.setImageDrawable(roundedImage);
-        status = "Vermist";
-        naam = "Zoef";
-        ras = "beagle";
-        kleur = "Wit met bruin";
-        eigenschappen = "Is schuw maar wel lief";
-        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
-
-        // Rond profiel aanmaken Zoef
-        imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_lassie);
-        bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_lassie);
-        roundedImage = new RoundImage(bm);
-        imageview_profiel.setImageDrawable(roundedImage);
-        status = "Vermist";
-        naam = "Lassie";
-        ras = "Collie";
-        kleur = "Bruin met wit";
-        eigenschappen = "Is goed met kinderen";
-        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
-
-        // Rond profiel aanmaken Frank
-        imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_frank);
-        bm = BitmapFactory.decodeResource(getResources(), R.drawable.ic_kat_voorbeeld);
-        roundedImage = new RoundImage(bm);
-        imageview_profiel.setImageDrawable(roundedImage);
-        status = "Gevonden";
-        naam = "Frank";
-        ras = "Lapjeskat";
-        kleur = "Wit met grijs";
-        eigenschappen = "Reageert op zijn naam";
-        imageviewProfielListener(imageview_profiel, bm, status, naam, ras, kleur, eigenschappen);
-        */
 
         Database db = new Database(getActivity());
         List<Dier> dieren = db.getAllDieren();
@@ -83,6 +41,15 @@ public class HomeActivity extends Fragment {
                 int resID = getResources().getIdentifier(i, "id", "lassie.lassie");
                 TextView textview = (TextView) fragmentview.findViewById(resID);
                 textview.setText(diertemp.getNaam() + "\n" + diertemp.getRas() + "\n" + diertemp.getKleur());
+                t++;
+            }
+        }
+
+        for (Dier dier : dieren) {
+            int t = 1;
+            while (t < 4) {
+                Dier diertemp = dieren.get(t - 1);
+                tekenen(t, diertemp.getDier_ID());
                 t++;
             }
         }
@@ -108,7 +75,6 @@ public class HomeActivity extends Fragment {
             }
         });
 
-        //  tekenen();
         final Button plaatsBericht = (Button) fragmentview.findViewById(R.id.button_plaats_bericht);
         // Klik event plaats bericht button
         plaatsBericht.setOnClickListener(new View.OnClickListener() {
@@ -124,8 +90,7 @@ public class HomeActivity extends Fragment {
         return fragmentview;
     }
 
-    private void imageviewProfielListener(final ImageView profiel, final Bitmap bm, final String status, final String naam, final String ras,
-                                          final String kleur, final String eigenschappen) {
+    private void imageviewProfielListener(final ImageView profiel, final int dier_ID, final Bitmap bm) {
         profiel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,19 +100,31 @@ public class HomeActivity extends Fragment {
                         .addToBackStack("detailView").replace(R.id.frame_container, fragment).commit();
                 Bundle extras = new Bundle();
                 extras.putParcelable("imageview_profiel", bm);
-                extras.putString("status", status);
-                extras.putString("naam", naam);
-                extras.putString("ras", ras);
-                extras.putString("kleur", kleur);
-                extras.putString("eigenschappen", eigenschappen);
+                extras.putInt("dier_ID", dier_ID);
                 fragment.setArguments(extras);
             }
         });
     }
 
+    public void tekenen(int t, int dier_ID) {
+        RoundImage roundedImage;
+        String imageviewString = "dier";
+        String imageview_profiel = "imageview_dier";
+        imageviewString += t;
+        imageview_profiel += t;
+        int resourceID = getResources().getIdentifier(imageviewString,
+                "drawable", "lassie.lassie");
+        int resID = getResources().getIdentifier(imageview_profiel,
+                "id", "lassie.lassie");
+        ImageView imageview = (ImageView) fragmentview.findViewById(resID);
+        Bitmap bm = BitmapFactory.decodeResource(getResources(), resourceID);
+        roundedImage = new RoundImage(bm);
+        imageview.setImageDrawable(roundedImage);
+        imageviewProfielListener(imageview, dier_ID, bm);
+    }
 
     // Methode voor meerdere plaatjes naast elkaar plaatsen (reeks {1,2,3...n} ).
-  /*      public void tekenen () {
+ /*       public void tekenen () {
         int t = 1;
         int margin_left = 120;
         try {
@@ -162,13 +139,13 @@ public class HomeActivity extends Fragment {
     }
 
         public ImageView afGaan (int t) {
-            String i = "R.drawable.";
+            String i = "R.drawable.dier";
             i = i + t;
             int resID = getResources().getIdentifier(i,
                     "id", "lassie.lassie");
             return (ImageView) fragmentview.findViewById(resID);
-        }
-*/
+        } */
+
 
 }
 
