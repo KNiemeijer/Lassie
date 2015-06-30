@@ -10,8 +10,10 @@ public class Dier {
     private static final String DIER_GESLACHT = "geslacht";
     private static final String DIER_KLEUR = "kleur";
     private static final String DIER_STATUS = "status";
+    private static final String DIER_POSTCODE = "postcode";
+    private static final String DIER_EIGENSCHAPPEN = "eigenschappen";
     private static final String DIER_GEBRUIKER_ID = "gebruiker_ID";
-    private static final String[] DierKolom = {DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_GEBRUIKER_ID};
+    private static final String[] DierKolom = {DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_POSTCODE, DIER_EIGENSCHAPPEN, DIER_GEBRUIKER_ID};
     private int dier_ID;
     private String naam;
     private String diersoort;
@@ -19,12 +21,14 @@ public class Dier {
     private String geslacht;
     private String kleur;
     private String status;
+    private String postcode;
+    private String eigenschappen;
     private int gebruiker_ID;
 
     public Dier() {
     }
 
-    public Dier(int dier_ID, String naam, String diersoort, String ras, String geslacht, String kleur, String status, int gebruiker_ID) {
+    public Dier(int dier_ID, String naam, String diersoort, String ras, String geslacht, String kleur, String status, String postcode, String eigenschappen, int gebruiker_ID) {
         super();
         this.dier_ID = dier_ID;
         this.diersoort = diersoort;
@@ -33,6 +37,8 @@ public class Dier {
         this.geslacht = geslacht;
         this.kleur = kleur;
         this.status = status;
+        this.postcode = postcode;
+        this.eigenschappen = eigenschappen;
         this.gebruiker_ID = gebruiker_ID;
     }
 
@@ -94,6 +100,22 @@ public class Dier {
         this.status = status;
     }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
+    public String getEigenschappen() {
+        return eigenschappen;
+    }
+
+    public void setEigenschappen(String eigenschappen) {
+        this.eigenschappen = eigenschappen;
+    }
+
     public int getGebruiker_ID() {
         return gebruiker_ID;
     }
@@ -106,6 +128,6 @@ public class Dier {
     public String toString() {
         return "DIER [Dier_ID = " + dier_ID + ", naam = " + naam + ", diersoort = " + diersoort + ", ras = "
                 + ras + ", geslacht = " + geslacht + ", kleur = " + kleur + ", status = " + status
-                + ", gebruiker_ID = " + gebruiker_ID + "]";
+                + ", postcode = " + postcode + ", eigenschappen = " + eigenschappen + ", gebruiker_ID = " + gebruiker_ID + "]";
     }
 }

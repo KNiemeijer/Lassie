@@ -37,7 +37,7 @@ public class Home extends Activity {
     }
 
     public void Continue(View view) {
-        int gebruikerID = 1;
+        int gebruikerID = db.getAllGebruikers().size() + 1;
         voegToeVoorPrototype(gebruikerID);
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("gebruikerID", gebruikerID);
@@ -50,11 +50,11 @@ public class Home extends Activity {
                 ((EditText) findViewById(R.id.edittext_email)).getText().toString());
         db.addGebruiker(gebruiker);
 
-        Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", 1);
+        Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", "3571ZZ", "Is schuw maar wel lief", 1);
         db.addDier(dier);
-        dier = new Dier(2, "Lassie", "Hond", "Collie", "Man", "Bruin met wit", "Vermist", 0);
+        dier = new Dier(2, "Lassie", "Hond", "Collie", "Man", "Bruin met wit", "Vermist", "3552VC", "Is erg gesteld op kinderen", 0);
         db.addDier(dier);
-        dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", 0);
+        dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", "3607CA", "Verstopt zich graag onder auto's", 0);
         db.addDier(dier);
 
         Bericht bericht = new Bericht(1, gebruikerID, 3, "27-06-2015", "1202AE", "Aan DierenLiefhebber1:\nHallo ik geloof dat ik" +

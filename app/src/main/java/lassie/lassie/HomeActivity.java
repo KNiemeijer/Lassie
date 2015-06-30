@@ -90,6 +90,7 @@ public class HomeActivity extends Fragment {
         return fragmentview;
     }
 
+
     private void imageviewProfielListener(final ImageView profiel, final int dier_ID, final Bitmap bm) {
         profiel.setOnClickListener(new View.OnClickListener() {
             @Override

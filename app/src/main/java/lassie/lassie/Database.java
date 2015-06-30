@@ -27,6 +27,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String GEBRUIKER_STAD = "stad";
     private static final String GEBRUIKER_EMAIL = "email";
     private static final String GEBRUIKER_TELEFOONNUMMER = "telefoonnummer";
+    private static final String GEBRUIKER_POSTCODE = "postcode";
 
     // Kolom namen DIER
     private static final String DIER_ID = "dier_ID";
@@ -36,6 +37,8 @@ public class Database extends SQLiteOpenHelper {
     private static final String DIER_GESLACHT = "geslacht";
     private static final String DIER_KLEUR = "kleur";
     private static final String DIER_STATUS = "status";
+    private static final String DIER_POSTCODE = "postcode";
+    private static final String DIER_EIGENSCHAPPEN = "eigenschappen";
     private static final String DIER_GEBRUIKER_ID = "gebruiker_ID";
 
     // Kolom namen BERICHT
@@ -46,9 +49,8 @@ public class Database extends SQLiteOpenHelper {
     private static final String BERICHT_POSTCODE = "postcode";
     private static final String BERICHT_BERICHT = "bericht";
     private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_GEBRUIKERSNAAM, GEBRUIKER_WACHTWOORD, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
-            GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER};
-    //    private static final String[] GebruikersPassKolom = {GEBRUIKER_PASS_EMAIL, GEBRUIKER_PASS_WACHTWOORD};
-    private static final String[] DierKolom = {DIER_ID, DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_GEBRUIKER_ID};
+            GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER, GEBRUIKER_POSTCODE};
+    private static final String[] DierKolom = {DIER_ID, DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_POSTCODE, DIER_EIGENSCHAPPEN, DIER_GEBRUIKER_ID};
     private static final String[] BerichtKolom = {BERICHT_BERICHT_ID, BERICHT_DIER_ID, BERICHT_GEBRUIKER_ID, BERICHT_DATUM, BERICHT_POSTCODE, BERICHT_BERICHT};
 
     public Database(Context context) {
@@ -67,7 +69,8 @@ public class Database extends SQLiteOpenHelper {
                         "achternaam VARCHAR(30)," +
                         "stad VARCHAR (30)," +
                         "email VARCHAR(70)," +
-                        "telefoonnummer INTEGER," +
+                        "telefoonnummer VARCHAR(10)," +
+                        "postcode VARCHAR(6)," +
                         "PRIMARY KEY (gebruiker_ID)" +
                         ");";
         String SQL_CREATE_ENTRIES_DIER =
@@ -79,6 +82,8 @@ public class Database extends SQLiteOpenHelper {
                         "geslacht VARCHAR (1)," +
                         "kleur VARCHAR(15) NOT NULL," +
                         "status VARCHAR(15) NOT NULL," +
+                        "postcode VARCHAR(6) NOT NULL," +
+                        "eigenschappen VARCHAR (40)," +
                         "gebruiker_ID INTEGER NOT NULL," +
                         "PRIMARY KEY (dier_ID)" +
                         " FOREIGN KEY (gebruiker_ID) REFERENCES GEBRUIKER (gebruiker_ID)" +
@@ -123,6 +128,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(GEBRUIKER_STAD, gebruiker.getStad());
         values.put(GEBRUIKER_EMAIL, gebruiker.getEmail());
         values.put(GEBRUIKER_TELEFOONNUMMER, gebruiker.getTelefoonnummer());
+        values.put(GEBRUIKER_POSTCODE, gebruiker.getPostcode());
 
 
         db.insert(TABLE_GEBRUIKER,
@@ -159,6 +165,7 @@ public class Database extends SQLiteOpenHelper {
         gebruiker.setStad(cursor.getString(6));
         gebruiker.setEmail(cursor.getString(7));
         gebruiker.setTelefoonnummer(cursor.getString(8));
+        gebruiker.setPostcode(cursor.getString(9));
 
         Log.d("getGebruiker(" + id + ")", gebruiker.toString());
         return gebruiker;
@@ -184,6 +191,7 @@ public class Database extends SQLiteOpenHelper {
                 gebruiker.setStad(cursor.getString(6));
                 gebruiker.setEmail(cursor.getString(7));
                 gebruiker.setTelefoonnummer(cursor.getString(8));
+                gebruiker.setPostcode(cursor.getString(9));
 
                 gebruikers.add(gebruiker);
             } while (cursor.moveToNext());
@@ -210,6 +218,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(GEBRUIKER_STAD, gebruiker.getStad());
         values.put(GEBRUIKER_EMAIL, gebruiker.getEmail());
         values.put(GEBRUIKER_TELEFOONNUMMER, gebruiker.getTelefoonnummer());
+        values.put(GEBRUIKER_POSTCODE, gebruiker.getPostcode());
 
         int i = db.update(TABLE_GEBRUIKER,
                 values,
@@ -250,6 +259,8 @@ public class Database extends SQLiteOpenHelper {
         values.put(DIER_GESLACHT, dier.getGeslacht());
         values.put(DIER_KLEUR, dier.getKleur());
         values.put(DIER_STATUS, dier.getStatus());
+        values.put(DIER_POSTCODE, dier.getPostcode());
+        values.put(DIER_EIGENSCHAPPEN, dier.getEigenschappen());
         values.put(DIER_GEBRUIKER_ID, dier.getGebruiker_ID());
 
 
@@ -285,7 +296,9 @@ public class Database extends SQLiteOpenHelper {
         dier.setGeslacht(cursor.getString(4));
         dier.setKleur(cursor.getString(5));
         dier.setStatus(cursor.getString(6));
-        dier.setGebruiker_ID(Integer.parseInt(cursor.getString(7)));
+        dier.setPostcode(cursor.getString(7));
+        dier.setEigenschappen(cursor.getString(8));
+        dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
 
         Log.d("getDier(" + id + ")", dier.toString());
         return dier;
@@ -309,7 +322,9 @@ public class Database extends SQLiteOpenHelper {
                 dier.setGeslacht(cursor.getString(4));
                 dier.setKleur(cursor.getString(5));
                 dier.setStatus(cursor.getString(6));
-                dier.setGebruiker_ID(Integer.parseInt(cursor.getString(7)));
+                dier.setPostcode(cursor.getString(7));
+                dier.setEigenschappen(cursor.getString(8));
+                dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
 
                 dieren.add(dier);
             } while (cursor.moveToNext());
@@ -334,6 +349,8 @@ public class Database extends SQLiteOpenHelper {
         values.put(DIER_GESLACHT, dier.getGeslacht());
         values.put(DIER_KLEUR, dier.getKleur());
         values.put(DIER_STATUS, dier.getStatus());
+        values.put(DIER_POSTCODE, dier.getPostcode());
+        values.put(DIER_EIGENSCHAPPEN, dier.getEigenschappen());
         values.put(DIER_GEBRUIKER_ID, dier.getGebruiker_ID());
 
         int i = db.update(TABLE_DIER,

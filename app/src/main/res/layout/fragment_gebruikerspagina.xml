@@ -1,257 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/UserPage"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/UserPage">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Invulling geven -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Gebruiker"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="28dp" />
+            <TextView
+                android:id="@+id/textview_gebruiker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="34dp"
+                android:layout_marginTop="28dp"
+                android:text="Gebruiker"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Voornaam:"
-        android:id="@+id/textView2"
-        android:layout_below="@+id/textView"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_voornaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_gebruiker"
+                android:layout_below="@+id/textview_gebruiker"
+                android:layout_marginStart="35dp"
+                android:layout_marginTop="8dp"
+                android:text="Voornaam:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Tussenvoegsel:"
-        android:id="@+id/textView3"
-        android:layout_below="@+id/textView2"
-        android:layout_alignStart="@+id/textView2"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_achternaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_voornaam"
+                android:layout_below="@+id/textview_voornaam"
+                android:layout_marginTop="8dp"
+                android:text="Achternaam:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Achternaam:"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
-        android:layout_marginTop="8dp" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Gebruikersnaam:"
-        android:id="@+id/textView5"
-        android:layout_below="@+id/textView4"
-        android:layout_alignStart="@+id/textView4"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_gebruikersnaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_achternaam"
+                android:layout_below="@+id/textview_achternaam"
+                android:layout_marginTop="8dp"
+                android:text="Gebruikersnaam:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
 
+            <TextView
+                android:id="@+id/textview_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_gebruikersnaam"
+                android:layout_below="@+id/textview_gebruikersnaam"
+                android:layout_marginTop="8dp"
+                android:text="Email adres:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Email adres:"
-        android:id="@+id/textView6"
-        android:layout_below="@+id/textView5"
-        android:layout_alignStart="@+id/textView5"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_stad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_email"
+                android:layout_below="@+id/textview_email"
+                android:layout_marginTop="8dp"
+                android:text="Stad:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Locatie:"
-        android:id="@+id/textView7"
-        android:layout_below="@+id/textView6"
-        android:layout_alignStart="@+id/textView6"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_telefoonnummer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_stad"
+                android:layout_below="@+id/textview_stad"
+                android:layout_marginTop="8dp"
+                android:text="Telefoonnummer:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Telefoonnummer:"
-        android:id="@+id/textView8"
-        android:layout_below="@+id/textView7"
-        android:layout_alignStart="@+id/textView7"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_postcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_telefoonnummer"
+                android:layout_below="@+id/textview_telefoonnummer"
+                android:layout_marginTop="8dp"
+                android:text="Postcode:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="John"
-        android:id="@+id/textView9"
-        android:layout_above="@+id/textView3"
-        android:layout_toEndOf="@+id/textView8"
-        android:layout_marginStart="32dp"
-        android:textColor="#FF000000"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/voornaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_achternaam"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@+id/textview_postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="de"
-        android:id="@+id/textView10"
-        android:textColor="#FF000000"
-        android:layout_above="@+id/textView4"
-        android:layout_alignStart="@+id/textView9"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/achternaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_gebruikersnaam"
+                android:layout_alignStart="@+id/voornaam"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Hond"
-        android:id="@+id/textView11"
-        android:textColor="#FF000000"
-        android:layout_above="@+id/textView5"
-        android:layout_alignStart="@+id/textView10"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/gebruikersnaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_email"
+                android:layout_alignStart="@+id/achternaam"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="john1980"
-        android:id="@+id/textView12"
-        android:textColor="#FF000000"
-        android:layout_above="@+id/textView6"
-        android:layout_alignStart="@+id/textView10"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_email"
+                android:layout_alignStart="@+id/gebruikersnaam"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000"
+                android:textSize="15sp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="JohnHond@uu.nl"
-        android:id="@+id/textView13"
-        android:textColor="#FF000000"
-        android:layout_alignBottom="@+id/textView6"
-        android:layout_alignStart="@+id/textView12"
-        android:layout_marginTop="8dp"
-        android:textSize="15sp" />
+            <TextView
+                android:id="@+id/stad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_stad"
+                android:layout_alignStart="@+id/email"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Utrecht"
-        android:id="@+id/textView14"
-        android:textColor="#FF000000"
-        android:layout_above="@+id/textView8"
-        android:layout_alignStart="@+id/textView13"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/telefoonnummer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_telefoonnummer"
+                android:layout_alignStart="@+id/stad"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="+31621346578"
-        android:id="@+id/textView15"
-        android:textColor="#FF000000"
-        android:layout_alignBottom="@+id/textView8"
-        android:layout_alignStart="@+id/textView14"
-        android:phoneNumber="true"
-        android:layout_marginTop="8dp"
-        android:textSize="15dp" />
+            <TextView
+                android:id="@+id/postcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_postcode"
+                android:layout_alignStart="@+id/email"
+                android:layout_marginTop="8dp"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Dier"
-        android:id="@+id/textView16"
-        android:layout_marginTop="28dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignStart="@+id/textView" />
+            <TextView
+                android:id="@+id/textview_dier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_gebruiker"
+                android:layout_below="@+id/textview_postcode"
+                android:layout_marginTop="28dp"
+                android:text="Dier"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Naam:"
-        android:id="@+id/textView17"
-        android:layout_below="@+id/textView16"
-        android:layout_alignStart="@+id/textView8"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_naam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_postcode"
+                android:layout_below="@+id/textview_dier"
+                android:layout_marginTop="8dp"
+                android:text="Naam:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Diersoort:"
-        android:id="@+id/textView18"
-        android:layout_below="@+id/textView17"
-        android:layout_alignStart="@+id/textView17"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_diersoort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_naam"
+                android:layout_below="@+id/textview_dier_naam"
+                android:layout_marginTop="8dp"
+                android:text="Diersoort:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Ras:"
-        android:id="@+id/textView19"
-        android:layout_below="@+id/textView18"
-        android:layout_alignStart="@+id/textView18"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_ras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_diersoort"
+                android:layout_below="@+id/textview_dier_diersoort"
+                android:layout_marginTop="8dp"
+                android:text="Ras:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Geslacht:"
-        android:id="@+id/textView20"
-        android:layout_below="@+id/textView19"
-        android:layout_alignStart="@+id/textView19"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_geslacht"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_ras"
+                android:layout_below="@+id/textview_dier_ras"
+                android:layout_marginTop="8dp"
+                android:text="Geslacht:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Kleur:"
-        android:id="@+id/textView21"
-        android:layout_below="@+id/textView20"
-        android:layout_alignStart="@+id/textView20"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_kleur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_geslacht"
+                android:layout_below="@+id/textview_dier_geslacht"
+                android:layout_marginTop="8dp"
+                android:text="Kleur:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Status:"
-        android:id="@+id/textView22"
-        android:layout_below="@+id/textView21"
-        android:layout_alignStart="@+id/textView21"
-        android:layout_marginTop="8dp" />
+            <TextView
+                android:id="@+id/textview_dier_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_kleur"
+                android:layout_below="@+id/textview_dier_kleur"
+                android:layout_marginTop="8dp"
+                android:text="Status:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Geen dier geregistreerd"
-        android:id="@+id/textView23"
-        android:textSize="15sp"
-        android:textStyle="italic"
-        android:textColor="#FF000000"
-        android:layout_above="@+id/textView18"
-        android:layout_toEndOf="@+id/textView8" />
+            <TextView
+                android:id="@+id/textview_dier_postcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_status"
+                android:layout_below="@+id/textview_dier_status"
+                android:layout_marginTop="8dp"
+                android:text="Postcode:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
+            <TextView
+                android:id="@+id/textview_dier_eigenschappen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_dier_postcode"
+                android:layout_below="@+id/textview_dier_postcode"
+                android:layout_marginTop="8dp"
+                android:text="Eigenschappen:"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+            <TextView
+                android:id="@+id/dier_naam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_diersoort"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_diersoort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_ras"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_ras"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_geslacht"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_geslacht"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_kleur"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_kleur"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_status"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/textview_dier_postcode"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_postcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_dier_postcode"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <TextView
+                android:id="@+id/dier_eigenschappen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/textview_dier_eigenschappen"
+                android:layout_alignStart="@+id/postcode"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FF000000" />
+
+            <Button
+                android:id="@+id/button_bewerk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@+id/dier_eigenschappen"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/onze_kleur"
+                android:clickable="true"
+                android:enabled="true"
+                android:text="Bewerk" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>

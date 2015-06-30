@@ -243,18 +243,10 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
         }
     }
 
-    public void verstuurBericht(View view) {
-
-        selecteerFragment(9);
-        }
-
     public int getGebruikersID() {
         return gebruikersID;
     }
 
-    public int getDierID() {
-        return dierID;
-    }
 
     // 'Luister' naar wanneer er op een menu geklikt wordt en geeft dit door aan selectFragment
     private class DrawerItemClickListener implements ListView.OnItemClickListener {

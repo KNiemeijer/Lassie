@@ -13,8 +13,9 @@ public class Gebruiker {
     private static final String GEBRUIKER_STAD = "stad";
     private static final String GEBRUIKER_EMAIL = "email";
     private static final String GEBRUIKER_TELEFOONNUMMER = "telefoonnummer";
+    private static final String GEBRUIKER_POSTCODE = "postcode";
     private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_GEBRUIKERSNAAM, GEBRUIKER_WACHTWOORD, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
-            GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER};
+            GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER, GEBRUIKER_POSTCODE};
     private int gebruiker_ID;
     private String gebruikersnaam;
     private String wachtwoord;
@@ -24,6 +25,7 @@ public class Gebruiker {
     private String stad;
     private String email;
     private String telefoonnummer;
+    private String postcode;
 
     public Gebruiker() {
     }
@@ -47,7 +49,7 @@ public class Gebruiker {
         this.telefoonnummer = telefoonnummer;
     }
 
-    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String tussenvoegsel, String achternaam, String stad, String email, String telefoonnummer) {
+    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String tussenvoegsel, String achternaam, String stad, String email, String telefoonnummer, String postcode) {
         super();
         this.gebruiker_ID = gebruiker_ID;
         this.gebruikersnaam = gebruikersnaam;
@@ -58,6 +60,7 @@ public class Gebruiker {
         this.stad = stad;
         this.email = email;
         this.telefoonnummer = telefoonnummer;
+        this.postcode = postcode;
     }
 
     //getters & setters
@@ -135,10 +138,18 @@ public class Gebruiker {
         this.telefoonnummer = telefoonnummer;
     }
 
+    public String getPostcode() {
+        return postcode;
+    }
+
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
+    }
+
     @Override
     public String toString() {
         return "GEBRUIKER [Gebruiker_ID = " + gebruiker_ID + ", voornaam = " + voornaam + ", tussenvoegsel = " + tussenvoegsel + ", achternaam = "
-                + achternaam + ", stad = " + stad + ", email = " + email + ", telefoonnummer = " + telefoonnummer
+                + achternaam + ", stad = " + stad + ", email = " + email + ", telefoonnummer = " + telefoonnummer + ", postcode = " + postcode
                 + "]";
     }
 }
