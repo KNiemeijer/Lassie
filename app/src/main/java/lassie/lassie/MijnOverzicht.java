@@ -110,7 +110,7 @@ public class MijnOverzicht extends Fragment {
                 // Button Details
                 Button button = new Button(fragmentview.getContext());
                 button.setText("Details");
-                button.setBackgroundColor(Color.parseColor("#ff009688"));
+                button.setBackgroundColor(Color.parseColor("#E0411D"));
                 button.setPaddingRelative(-10, 0, -10, 0);
                 button.setLayoutParams(new TableRow.LayoutParams(0, RadioGroup.LayoutParams.WRAP_CONTENT, 1f));
                 buttonClickListener(button, dierUitLijst.getDier_ID());
@@ -129,6 +129,7 @@ public class MijnOverzicht extends Fragment {
                 layout.addView(dynamicTextView);
                 Button button = new Button(fragmentview.getContext());
                 button.setText("Details");
+                button.setBackgroundColor(Color.parseColor("#E0411D"));
                 button.setLayoutParams(new LinearLayout.LayoutParams(RadioGroup.LayoutParams.WRAP_CONTENT, RadioGroup.LayoutParams.WRAP_CONTENT));
                 layout.addView(button);
             }
