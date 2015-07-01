@@ -17,6 +17,6 @@
         android:layout_gravity="start"
         android:background="#FFFFFF"
         android:choiceMode="singleChoice"
-        android:divider="@android:color/holo_blue_light"
+        android:divider="@color/onze_kleur"
         android:dividerHeight="1dp" />
 </android.support.v4.widget.DrawerLayout>

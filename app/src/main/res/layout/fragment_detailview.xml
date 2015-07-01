@@ -188,7 +188,7 @@
         android:layout_below="@+id/dier_eigenschappen"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:background="#ff009688"
+        android:background="@color/onze_kleur"
         android:padding="10dp"
         android:text="@string/button_reageer" />
 </RelativeLayout>

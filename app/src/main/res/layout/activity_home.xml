@@ -11,7 +11,7 @@
         android:layout_below="@+id/textview_login_met"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:background="#ff009688"
+        android:background="@color/onze_kleur"
         android:onClick="Continue"
         android:padding="10dp"
         android:text="@string/button_continue" />
