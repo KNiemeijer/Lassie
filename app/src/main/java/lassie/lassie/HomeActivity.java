@@ -118,9 +118,11 @@ public class HomeActivity extends Fragment {
         Database db = new Database(getActivity());
         status.setText(db.getDier(dier_ID).getStatus());
         if (db.getDier(dier_ID).getStatus().equals("Gevonden")) {
-            status.setTextColor(getResources().getColor(R.color.green));
+            status.setTextColor(getResources().getColor(R.color.black));
+            status.setBackgroundColor(getResources().getColor(R.color.green));
         } else {
-            status.setTextColor(getResources().getColor(R.color.red));
+            status.setTextColor(getResources().getColor(R.color.black));
+            status.setBackgroundColor(getResources().getColor(R.color.red));
         }
 
     }
