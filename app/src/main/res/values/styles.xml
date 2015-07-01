@@ -3,10 +3,21 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <item name="android:icon">@drawable/logo</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/MyActionBar</item>
     </style>
 
-    <style name="AppTheme.ActionBarStyle" parent="android:style/Widget.Holo.Light.ActionBar">
+    <!-- ActionBar styles -->
+    <style name="MyActionBar"
+        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/onze_kleur</item>
         <item name="android:icon">@drawable/logo</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/onze_kleur</item>
+        <item name="icon">@drawable/logo</item>
     </style>
 
     <color name="red">#ff0000</color>
