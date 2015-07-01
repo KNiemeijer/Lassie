@@ -80,7 +80,7 @@ public class Database extends SQLiteOpenHelper {
                         "diersoort VARCHAR (30) NOT NULL," +
                         "ras VARCHAR (30)," +
                         "geslacht VARCHAR (1)," +
-                        "kleur VARCHAR(15) NOT NULL," +
+                        "kleur VARCHAR(15)," +
                         "status VARCHAR(15) NOT NULL," +
                         "postcode VARCHAR(6) NOT NULL," +
                         "eigenschappen VARCHAR (40)," +
@@ -331,6 +331,70 @@ public class Database extends SQLiteOpenHelper {
         }
 
         Log.d("getAllDiers()", dieren.toString());
+
+        return dieren;
+    }
+
+    public List<Dier> getAllVermisteDieren() {
+        List<Dier> dieren = new LinkedList<Dier>();
+
+        String query = "SELECT  * FROM " + TABLE_DIER + " WHERE status = \"Vermist\"";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Dier dier = null;
+        if (cursor.moveToFirst()) {
+            do {
+                dier = new Dier();
+                dier.setDier_ID(Integer.parseInt(cursor.getString(0)));
+                dier.setNaam(cursor.getString(1));
+                dier.setDiersoort(cursor.getString(2));
+                dier.setRas(cursor.getString(3));
+                dier.setGeslacht(cursor.getString(4));
+                dier.setKleur(cursor.getString(5));
+                dier.setStatus(cursor.getString(6));
+                dier.setPostcode(cursor.getString(7));
+                dier.setEigenschappen(cursor.getString(8));
+                dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+
+                dieren.add(dier);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        Log.d("getAllVermisteDieren()", dieren.toString());
+
+        return dieren;
+    }
+
+    public List<Dier> getAllGevondenDieren() {
+        List<Dier> dieren = new LinkedList<Dier>();
+
+        String query = "SELECT  * FROM " + TABLE_DIER + " WHERE status = \"Gevonden\"";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(query, null);
+        Dier dier = null;
+        if (cursor.moveToFirst()) {
+            do {
+                dier = new Dier();
+                dier.setDier_ID(Integer.parseInt(cursor.getString(0)));
+                dier.setNaam(cursor.getString(1));
+                dier.setDiersoort(cursor.getString(2));
+                dier.setRas(cursor.getString(3));
+                dier.setGeslacht(cursor.getString(4));
+                dier.setKleur(cursor.getString(5));
+                dier.setStatus(cursor.getString(6));
+                dier.setPostcode(cursor.getString(7));
+                dier.setEigenschappen(cursor.getString(8));
+                dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+
+                dieren.add(dier);
+            } while (cursor.moveToNext());
+        }
+        cursor.close();
+
+        Log.d("getAllGevondenDieren()", dieren.toString());
 
         return dieren;
     }

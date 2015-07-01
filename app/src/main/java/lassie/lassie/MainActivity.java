@@ -196,18 +196,15 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
                 fragment = new Gebruikerspagina();
                 break;
             case 6:
-                fragment = new Notificaties();
-                break;
-            case 7:
                 fragment = new Instellingen();
                 getSupportActionBar().setHomeButtonEnabled(false);  // hides action bar icon
                 break;
-            case 8:
+            case 7:
                 fragment = new DetailView();
                 getActionBar().setDisplayShowHomeEnabled(true);
                 getActionBar().setDisplayHomeAsUpEnabled(true);
                 break;
-            case 9:
+            case 8:
                 fragment = new BerichtGevonden();
                 break;
         }
@@ -218,7 +215,7 @@ public class MainActivity extends ActionBarActivity { // Ja, deze is deprecated,
 
             // update selected item and title, then close the drawer
             menuLijst.setItemChecked(position, true);
-            if (position == 9)
+            if (position == 8)
             {
                 setTitle(menuItems[3]);
             }

@@ -37,11 +37,23 @@ public class Home extends Activity {
     }
 
     public void Continue(View view) {
-        int gebruikerID = db.getAllGebruikers().size() + 1;
-        voegToeVoorPrototype(gebruikerID);
-        Intent intent = new Intent(this, MainActivity.class);
-        intent.putExtra("gebruikerID", gebruikerID);
-        startActivity(intent);
+        // Controleer of wachtwoorden overeenkomen
+        EditText wachtwoord = (EditText) findViewById(R.id.edittext_wachtwoord);
+        EditText herhaal_wachtwoord = (EditText) findViewById(R.id.edittext_herhaal_wachtwoord);
+        if (wachtwoord.getText().toString().equals(herhaal_wachtwoord.getText().toString())) {
+            int gebruikerID = db.getAllGebruikers().size() + 1;
+            voegToeVoorPrototype(gebruikerID);
+            Intent intent = new Intent(this, MainActivity.class);
+            intent.putExtra("gebruikerID", gebruikerID);
+            startActivity(intent);
+        } else {
+            // Als ze niet overeenkomen, maak het veld leeg en laat zien dat ze niet overeenkomen
+            herhaal_wachtwoord.setText("");
+            herhaal_wachtwoord.setHint("Wachtwoorden komen niet overeen");
+            herhaal_wachtwoord.setHintTextColor(getResources().getColor(R.color.red));
+
+        }
+
     }
 
     private void voegToeVoorPrototype(int gebruikerID) {

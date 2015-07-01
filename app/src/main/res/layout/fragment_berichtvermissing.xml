@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/imageview_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:contentDescription=""
+        android:minHeight="150dp"
+        android:minWidth="150dp"
+        android:src="@drawable/ic_border_collie" />
+
+    <TextView
+        android:id="@+id/textview_upload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageview_upload"
+        android:layout_centerHorizontal="true"
+        android:text="Foto uploaden"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/edittext_textview_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_rassoort"
+        android:layout_below="@+id/textview_upload"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_alignTop="@+id/edittext_textview_naam"
+        android:text="Naam:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textview_diersoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_naam"
+        android:text="Diersoort:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_textview_diersoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_kleur"
+        android:layout_alignTop="@+id/textview_diersoort"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    <TextView
+        android:id="@+id/edittext_textview_rassoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_kleur"
+        android:layout_alignTop="@+id/textview_rassoort"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_rassoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_diersoort"
+        android:text="Ras:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_textview_geslacht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_rassoort"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_geslacht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_rassoort"
+        android:text="Geslacht:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_textview_kleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_geslacht"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_kleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_geslacht"
+        android:text="@string/textview_kleur"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_textview_postcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/edittext_textview_eigenschappen"
+        android:layout_below="@+id/edittext_textview_kleur"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_postcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edittext_textview_postcode"
+        android:layout_toStartOf="@+id/edittext_textview_kleur"
+        android:text="Postcode:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/edittext_textview_eigenschappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/button_send"
+        android:layout_below="@+id/edittext_textview_postcode"
+        android:layout_marginStart="10dp"
+        android:ems="10"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textview_eigenschappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edittext_textview_eigenschappen"
+        android:layout_centerHorizontal="true"
+        android:layout_toStartOf="@+id/edittext_textview_postcode"
+        android:text="Eigenschappen:"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button_send"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:background="@color/onze_kleur"
+        android:clickable="true"
+        android:enabled="true"
+        android:text="Bewerk" />
+
+
+</RelativeLayout>

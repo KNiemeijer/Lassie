@@ -20,100 +20,172 @@
         android:scaleType="centerCrop" />
 
     <TextView
-        android:id="@+id/textview_status"
+        android:id="@+id/textview_dier_naam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="false"
         android:layout_below="@+id/imageview_profiel"
-        android:layout_centerHorizontal="true"
+        android:layout_marginStart="60dp"
         android:layout_marginTop="20dp"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <TextView
-        android:id="@+id/textview_naam"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_status"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="40dp"
-        android:text="@string/textview_naam"
+        android:text="Naam:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_naam_content"
+        android:id="@+id/textview_dier_diersoort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_status"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_toEndOf="@+id/textview_naam"
+        android:layout_alignStart="@+id/textview_dier_naam"
+        android:layout_below="@+id/textview_dier_naam"
+        android:layout_marginTop="8dp"
+        android:text="Diersoort:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_ras"
+        android:id="@+id/textview_dier_ras"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textview_naam"
-        android:layout_below="@+id/textview_naam"
-        android:layout_marginTop="20dp"
-        android:text="@string/textview_ras"
+        android:layout_alignStart="@+id/textview_dier_diersoort"
+        android:layout_below="@+id/textview_dier_diersoort"
+        android:layout_marginTop="8dp"
+        android:text="Ras:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_ras_content"
+        android:id="@+id/textview_dier_geslacht"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textview_naam_content"
-        android:layout_below="@+id/textview_naam_content"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/textview_ras"
+        android:layout_alignStart="@+id/textview_dier_ras"
+        android:layout_below="@+id/textview_dier_ras"
+        android:layout_marginTop="8dp"
+        android:text="Geslacht:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_kleur"
+        android:id="@+id/textview_dier_kleur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textview_ras"
-        android:layout_below="@+id/textview_ras"
-        android:layout_marginTop="20dp"
-        android:text="@string/textview_kleur"
+        android:layout_alignStart="@+id/textview_dier_geslacht"
+        android:layout_below="@+id/textview_dier_geslacht"
+        android:layout_marginTop="8dp"
+        android:text="Kleur:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_kleur_content"
+        android:id="@+id/textview_dier_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textview_ras_content"
-        android:layout_below="@+id/textview_ras_content"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/textview_kleur"
+        android:layout_alignStart="@+id/textview_dier_kleur"
+        android:layout_below="@+id/textview_dier_kleur"
+        android:layout_marginTop="8dp"
+        android:text="Status:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_eigenschappen"
+        android:id="@+id/textview_dier_postcode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textview_kleur"
-        android:layout_below="@+id/textview_kleur"
-        android:layout_marginTop="20dp"
-        android:text="@string/textview_eigenschappen"
+        android:layout_alignStart="@+id/textview_dier_status"
+        android:layout_below="@+id/textview_dier_status"
+        android:layout_marginTop="8dp"
+        android:text="Postcode:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
-        android:id="@+id/textview_eigenschappen_content"
+        android:id="@+id/textview_dier_eigenschappen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textview_kleur_content"
-        android:layout_below="@+id/textview_kleur_content"
-        android:layout_marginTop="20dp"
-        android:layout_toEndOf="@+id/textview_eigenschappen"
+        android:layout_alignStart="@+id/textview_dier_postcode"
+        android:layout_below="@+id/textview_dier_postcode"
+        android:layout_marginTop="8dp"
+        android:text="Eigenschappen:"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+
+    <TextView
+        android:id="@+id/dier_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_diersoort"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_diersoort"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_ras"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_ras"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_geslacht"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_geslacht"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_kleur"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_kleur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_status"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textview_dier_postcode"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_postcode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textview_dier_postcode"
+        android:layout_alignStart="@+id/dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
+
+    <TextView
+        android:id="@+id/dier_eigenschappen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textview_dier_eigenschappen"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/textview_dier_eigenschappen"
+        android:singleLine="true"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="#FF000000" />
 
     <Button
         android:id="@+id/button_registreer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textview_eigenschappen"
+        android:layout_below="@+id/dier_eigenschappen"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:background="#ff009688"

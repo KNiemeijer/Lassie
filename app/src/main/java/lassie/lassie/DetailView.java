@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -33,16 +34,30 @@ public class DetailView extends Fragment {
         int dier_ID = extras.getInt("dier_ID");
         Dier dier = db.getDier(dier_ID);
 
-        TextView textview_naam = (TextView) fragmentview.findViewById(R.id.textview_naam_content);
-        TextView textview_ras = (TextView) fragmentview.findViewById(R.id.textview_ras_content);
-        TextView textview_kleur = (TextView) fragmentview.findViewById(R.id.textview_kleur_content);
-        TextView textview_eigenschappen = (TextView) fragmentview.findViewById(R.id.textview_eigenschappen_content);
+        TextView naam = (TextView) fragmentview.findViewById(R.id.dier_naam);
+        TextView diersoort = (TextView) fragmentview.findViewById(R.id.dier_diersoort);
+        TextView ras = (TextView) fragmentview.findViewById(R.id.dier_ras);
+        TextView geslacht = (TextView) fragmentview.findViewById(R.id.dier_geslacht);
+        TextView kleur = (TextView) fragmentview.findViewById(R.id.dier_kleur);
+        TextView status = (TextView) fragmentview.findViewById(R.id.dier_status);
+        TextView postcode = (TextView) fragmentview.findViewById(R.id.dier_postcode);
+        TextView eigenschappen = (TextView) fragmentview.findViewById(R.id.dier_eigenschappen);
 
-        textview_naam.setText(dier.getNaam());
-        textview_ras.setText(dier.getRas());
-        textview_kleur.setText(dier.getKleur());
-        textview_eigenschappen.setText(dier.getDiersoort() + dier.getGeslacht());
-        getActivity().setTitle(dier.getNaam());
+        naam.setText(dier.getNaam());
+        diersoort.setText(dier.getDiersoort());
+        ras.setText(dier.getRas());
+        geslacht.setText(dier.getGeslacht());
+        kleur.setText(dier.getKleur());
+        status.setText(dier.getStatus());
+        postcode.setText(dier.getPostcode());
+        eigenschappen.setText(dier.getEigenschappen());
+
+        Button button = (Button) fragmentview.findViewById(R.id.button_registreer);
+        if (dier.getGebruiker_ID() == ((MainActivity) getActivity()).getGebruikersID()) {
+            button.setText("Bewerk");
+        } else {
+            button.setText("Reageer");
+        }
 
         return fragmentview;
 

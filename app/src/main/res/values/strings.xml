@@ -56,7 +56,6 @@
         <item>Plaats bericht gevonden dier</item>
         <item>Lijst/kaart vermissingen</item>
         <item>Gebruikerspagina</item>
-        <item>Notificaties</item>
         <item>Instellingen</item>
     </string-array>
     <string name="title_activity_lijst">Lijst</string>

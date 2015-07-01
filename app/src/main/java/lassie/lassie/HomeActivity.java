@@ -18,6 +18,8 @@ import java.util.List;
 public class HomeActivity extends Fragment {
 
     View fragmentview;
+    ToggleButton gevonden;
+    ToggleButton vermist;
 
     public HomeActivity() {
     }
@@ -28,41 +30,17 @@ public class HomeActivity extends Fragment {
 
         fragmentview = inflater.inflate(R.layout.fragment_home_activity, container, false);
 
-        Database db = new Database(getActivity());
-        List<Dier> dieren = db.getAllDieren();
 
-        String i;
-        for (Dier dier : dieren) {
-            int t = 1;
-            while (t < 4) {
-                Dier diertemp = dieren.get(t - 1);
-                i = "textview_dier";
-                i += t;
-                int resID = getResources().getIdentifier(i, "id", "lassie.lassie");
-                TextView textview = (TextView) fragmentview.findViewById(resID);
-                textview.setText(diertemp.getNaam() + "\n" + diertemp.getRas() + "\n" + diertemp.getKleur());
-                t++;
-            }
-        }
-
-        for (Dier dier : dieren) {
-            int t = 1;
-            while (t < 4) {
-                Dier diertemp = dieren.get(t - 1);
-                tekenen(t, diertemp.getDier_ID());
-                t++;
-            }
-        }
-
-        final ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
+        vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
 
         // Klik event vermist button
-        final ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
+        gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
         vermist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 ToggleButton gevonden = (ToggleButton) fragmentview.findViewById(R.id.button_gevonden);
                 gevonden.toggle();
+                checkDieren();
             }
         });
 
@@ -72,6 +50,7 @@ public class HomeActivity extends Fragment {
             public void onClick(View view) {
                 ToggleButton vermist = (ToggleButton) fragmentview.findViewById(R.id.button_vermist);
                 vermist.toggle();
+                checkDieren();
             }
         });
 
@@ -87,6 +66,9 @@ public class HomeActivity extends Fragment {
 
             }
         });
+
+        checkDieren();
+
         return fragmentview;
     }
 
@@ -109,19 +91,115 @@ public class HomeActivity extends Fragment {
 
     public void tekenen(int t, int dier_ID) {
         RoundImage roundedImage;
+        ImageView dier1 = (ImageView) fragmentview.findViewById(R.id.imageview_dier1);
+        ImageView dier2 = (ImageView) fragmentview.findViewById(R.id.imageview_dier2);
+        ImageView dier3 = (ImageView) fragmentview.findViewById(R.id.imageview_dier3);
+        dier1.setImageResource(0);
+        dier2.setImageResource(0);
+        dier3.setImageResource(0);
         String imageviewString = "dier";
         String imageview_profiel = "imageview_dier";
+        String textview_status = "textview_status_dier";
         imageviewString += t;
         imageview_profiel += t;
+        textview_status += t;
         int resourceID = getResources().getIdentifier(imageviewString,
                 "drawable", "lassie.lassie");
-        int resID = getResources().getIdentifier(imageview_profiel,
-                "id", "lassie.lassie");
-        ImageView imageview = (ImageView) fragmentview.findViewById(resID);
         Bitmap bm = BitmapFactory.decodeResource(getResources(), resourceID);
+        resourceID = getResources().getIdentifier(imageview_profiel,
+                "id", "lassie.lassie");
+        ImageView imageview = (ImageView) fragmentview.findViewById(resourceID);
+        resourceID = getResources().getIdentifier(textview_status,
+                "id", "lassie.lassie");
+        TextView status = (TextView) fragmentview.findViewById(resourceID);
         roundedImage = new RoundImage(bm);
         imageview.setImageDrawable(roundedImage);
         imageviewProfielListener(imageview, dier_ID, bm);
+        Database db = new Database(getActivity());
+        status.setText(db.getDier(dier_ID).getStatus());
+        if (db.getDier(dier_ID).getStatus().equals("Gevonden")) {
+            status.setTextColor(getResources().getColor(R.color.green));
+        } else {
+            status.setTextColor(getResources().getColor(R.color.red));
+        }
+
+    }
+
+    public void checkDieren() {
+        Database db = new Database(getActivity());
+        List<Dier> vermisteDieren = db.getAllVermisteDieren();
+        List<Dier> gevondenDieren = db.getAllGevondenDieren();
+
+        String i;
+
+        if (gevonden.isChecked()) {
+            for (Dier dier : gevondenDieren) {
+                {
+                    int t = 1;
+                    while (t < 4) {
+                        try {
+                            Dier diertemp = gevondenDieren.get(t - 1);
+                            i = "textview_dier";
+                            i += t;
+                            int resID = getResources().getIdentifier(i, "id", "lassie.lassie");
+                            TextView textview = (TextView) fragmentview.findViewById(resID);
+                            textview.setText(diertemp.getNaam() + "\n" + diertemp.getRas() + "\n" + diertemp.getKleur());
+                            t++;
+                        } catch (Exception e) {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (vermist.isChecked()) {
+            for (Dier dier : vermisteDieren) {
+                {
+                    int t = 1;
+                    while (t < 4) {
+                        try {
+                            Dier diertemp = vermisteDieren.get(t - 1);
+                            i = "textview_dier";
+                            i += t;
+                            int resID = getResources().getIdentifier(i, "id", "lassie.lassie");
+                            TextView textview = (TextView) fragmentview.findViewById(resID);
+                            textview.setText(diertemp.getNaam() + "\n" + diertemp.getRas() + "\n" + diertemp.getKleur());
+                            t++;
+                        } catch (Exception e) {
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        if (vermist.isChecked()) {
+            for (Dier dier : vermisteDieren) {
+                int t = 1;
+                while (t < 4) {
+                    try {
+                        Dier diertemp = vermisteDieren.get(t - 1);
+                        tekenen(t, diertemp.getDier_ID());
+                        t++;
+                    } catch (Exception e) {
+                        break;
+                    }
+                }
+            }
+        }
+        if (gevonden.isChecked()) {
+            for (Dier dier : gevondenDieren) {
+                int t = 1;
+                while (t < 4) {
+                    try {
+                        Dier diertemp = gevondenDieren.get(t - 1);
+                        tekenen(t, diertemp.getDier_ID());
+                        t++;
+                    } catch (Exception e) {
+                        break;
+                    }
+                }
+            }
+        }
     }
 
     // Methode voor meerdere plaatjes naast elkaar plaatsen (reeks {1,2,3...n} ).
