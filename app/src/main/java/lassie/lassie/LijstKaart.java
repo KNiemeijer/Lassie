@@ -2,7 +2,6 @@
 //Daarom dit weggehaald en hardcoded toegevoegd.
 
 /*package lassie.lassie;
-
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.graphics.Bitmap;
@@ -16,21 +15,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.ToggleButton;
-
 import java.util.List;
-
 public class LijstKaart extends Fragment {
     View fragmentview;
-
     public LijstKaart() {
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         fragmentview = inflater.inflate(R.layout.fragment_lijst_kaart, container, false);
         final ToggleButton lijst = (ToggleButton) fragmentview.findViewById(R.id.button_lijst);
-
         // Klik event lijst button (geleend van vermist/gevonden uit HomeActivity.java)
         final ToggleButton kaart = (ToggleButton) fragmentview.findViewById(R.id.button_kaart);
         lijst.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +34,6 @@ public class LijstKaart extends Fragment {
                 kaart.toggle();
             }
         });
-
         // Klik event kaart button (idem)
         kaart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,28 +42,22 @@ public class LijstKaart extends Fragment {
                 lijst.toggle();
             }
         });
-
         Database db = new Database(getActivity());
         int gebruikersID = ((MainActivity) getActivity()).getGebruikersID();
         List<Dier> dieren = db.getAllDieren();
         int t = 1;
         LinearLayout linearlayout = (LinearLayout) fragmentview.findViewById(R.id.lijstContent);
         for (final Dier dier : dieren) {
-
-
             // LinearLayout voor plaatje maken
             LinearLayout layout = new LinearLayout(getActivity());
             LinearLayout.LayoutParams lp = (new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
             layout.setOrientation(LinearLayout.HORIZONTAL);
             layout.setWeightSum(4);
-
-
             String imageviewString = "dier";
             imageviewString += t;
             int resourceID = getResources().getIdentifier(imageviewString,
                     "drawable", "lassie.lassie");
             final Bitmap bm = BitmapFactory.decodeResource(getResources(), resourceID);
-
             layout.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -87,12 +74,10 @@ public class LijstKaart extends Fragment {
             layout.setLayoutParams(lp);
             lp.width = LinearLayout.LayoutParams.WRAP_CONTENT;
             lp.weight = 1;
-
             // Plaatje invullen
             ImageView imageview = new ImageView(getActivity());
             imageview.setImageDrawable(tekenen(t));
             layout.addView(imageview);
-
             // Naam van dier invullen
             TextView textview_naam = new TextView(getActivity());
             textview_naam.setText(dier.getNaam());
@@ -103,7 +88,6 @@ public class LijstKaart extends Fragment {
             textview_naam.setLayoutParams(lp);
             textview_naam.setTextSize(15);
             layout.addView(textview_naam);
-
             // Beschrijving van dier invullen
             TextView textview_beschrijving = new TextView(getActivity());
             textview_beschrijving.setText(dier.getEigenschappen());
@@ -116,7 +100,6 @@ public class LijstKaart extends Fragment {
             textview_beschrijving.setLayoutParams(lp);
             textview_beschrijving.setTextSize(15);
             layout.addView(textview_beschrijving);
-
             // Status dier invullen
             TextView textview_status = new TextView(getActivity());
             textview_status.setText(dier.getStatus());
@@ -133,14 +116,10 @@ public class LijstKaart extends Fragment {
             }
             layout.addView(textview_status);
             linearlayout.addView(layout);
-
             t++;
         }
-
         return fragmentview;
     }
-
-
     public Drawable tekenen(int t) {
         RoundImage roundedImage;
         String imageviewString = "dier";
@@ -150,10 +129,7 @@ public class LijstKaart extends Fragment {
         Bitmap bm = BitmapFactory.decodeResource(getResources(), resourceID);
         roundedImage = new RoundImage(bm);
         return roundedImage;
-
     }
-
-
 } */
 
 package lassie.lassie;
