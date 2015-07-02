@@ -18,7 +18,7 @@
         android:layout_height="80dp"
         android:layout_below="@+id/imageview_logo"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="75dp"
         android:background="@color/onze_kleur"
         android:hapticFeedbackEnabled="true"
         android:text="Inloggen" />
