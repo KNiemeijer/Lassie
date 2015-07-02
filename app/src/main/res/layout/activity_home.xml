@@ -230,7 +230,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/contentdescription_logo"
         android:scaleType="fitXY"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logohd" />
 
     <TextView
         android:id="@+id/textview_nieuw_account"
