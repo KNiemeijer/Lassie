@@ -33,6 +33,7 @@ public class PlaatsBerichtGevonden extends Fragment {
                     .addToBackStack("BerichtGevonden").replace(R.id.frame_container, fragment).commit();
             Bundle extras = new Bundle();
 
+            ImageView imageview_profiel = (ImageView) fragmentview.findViewById(R.id.imageview_upload);
             EditText edittextNaam = (EditText) fragmentview.findViewById(R.id.edittext_naam);
             EditText edittextDiersoort = (EditText) fragmentview.findViewById(R.id.edittext_diersoort);
             EditText edittextRassoort = (EditText) fragmentview.findViewById(R.id.edittext_rassoort);
@@ -41,6 +42,7 @@ public class PlaatsBerichtGevonden extends Fragment {
             EditText edittextPostcode = (EditText) fragmentview.findViewById(R.id.edittext_postcode);
             EditText edittextEigenschappen = (EditText) fragmentview.findViewById(R.id.edittext_eigenschappen);
 
+            int imageview = imageview_profiel.getId();
             String naam = edittextNaam.getText().toString();
             String diersoort = edittextDiersoort.getText().toString();
             String rassoort = edittextRassoort.getText().toString();
@@ -53,7 +55,7 @@ public class PlaatsBerichtGevonden extends Fragment {
             extras.putInt("dierID", dierID);
             extras.putParcelable("bm", BitimageBitmap);
 
-            dier = new Dier(dierID, naam, diersoort, rassoort, geslacht, kleur, "gevonden", postcode, eigenschappen, ((MainActivity) getActivity()).gebruikersID);
+            dier = new Dier(dierID, naam, diersoort, rassoort, geslacht, kleur, "gevonden", postcode, eigenschappen, ((MainActivity) getActivity()).gebruikersID, imageview);
             db.addDier(dier);
 
             fragment.setArguments(extras);

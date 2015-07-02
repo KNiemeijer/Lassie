@@ -97,14 +97,12 @@ public class HomeActivity extends Fragment {
         dier1.setImageResource(0);
         dier2.setImageResource(0);
         dier3.setImageResource(0);
-        String imageviewString = "dier";
         String imageview_profiel = "imageview_dier";
         String textview_status = "textview_status_dier";
-        imageviewString += t;
         imageview_profiel += t;
         textview_status += t;
-        int resourceID = getResources().getIdentifier(imageviewString,
-                "drawable", "lassie.lassie");
+        Database db = new Database(getActivity());
+        int resourceID = db.getDier(dier_ID).getImage_ID();
         Bitmap bm = BitmapFactory.decodeResource(getResources(), resourceID);
         resourceID = getResources().getIdentifier(imageview_profiel,
                 "id", "lassie.lassie");
@@ -115,7 +113,6 @@ public class HomeActivity extends Fragment {
         roundedImage = new RoundImage(bm);
         imageview.setImageDrawable(roundedImage);
         imageviewProfielListener(imageview, dier_ID, bm);
-        Database db = new Database(getActivity());
         status.setText(db.getDier(dier_ID).getStatus());
         if (db.getDier(dier_ID).getStatus().equals("Gevonden")) {
             status.setTextColor(getResources().getColor(R.color.black));

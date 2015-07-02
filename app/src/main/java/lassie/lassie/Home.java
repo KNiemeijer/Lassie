@@ -58,11 +58,11 @@ public class Home extends Activity {
 
     private void voegToeVoorPrototype(int gebruikerID) {
 
-        Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", "3571ZZ", "Is schuw maar wel lief", 1);
+        Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", "3571ZZ", "Is schuw maar wel lief", 1, R.drawable.ic_hond_voorbeeld);
         db.addDier(dier);
-        dier = new Dier(2, "Lassie", "Hond", "Collie", "Man", "Bruin met wit", "Vermist", "3552VC", "Is erg gesteld op kinderen", 0);
+        dier = new Dier(2, "Lassie", "Hond", "Collie", "Man", "Bruin met wit", "Vermist", "3552VC", "Is erg gesteld op kinderen", 0, R.drawable.ic_lassie);
         db.addDier(dier);
-        dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", "3607CA", "Verstopt zich graag onder auto's", 0);
+        dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", "3607CA", "Verstopt zich graag onder auto's", 0, R.drawable.ic_kat_voorbeeld);
         db.addDier(dier);
 
         Bericht bericht = new Bericht(1, gebruikerID, 3, "27-06-2015", "1202AE", "Aan DierenLiefhebber1:\nHallo ik geloof dat ik" +

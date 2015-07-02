@@ -26,6 +26,7 @@ public class PlaatsBerichtVermissing extends Fragment {
     Database db;
     Dier dier;
     Bitmap bm;
+    int image_ID;
     View.OnClickListener GaDoor = new View.OnClickListener() {
         @Override
         public void onClick(View v) {

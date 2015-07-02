@@ -40,6 +40,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String DIER_POSTCODE = "postcode";
     private static final String DIER_EIGENSCHAPPEN = "eigenschappen";
     private static final String DIER_GEBRUIKER_ID = "gebruiker_ID";
+    private static final String DIER_IMAGE_ID = "image_ID";
 
     // Kolom namen BERICHT
     private static final String BERICHT_BERICHT_ID = "bericht_ID";
@@ -50,7 +51,7 @@ public class Database extends SQLiteOpenHelper {
     private static final String BERICHT_BERICHT = "bericht";
     private static final String[] GebruikersKolom = {GEBRUIKER_GEBRUIKER_ID, GEBRUIKER_GEBRUIKERSNAAM, GEBRUIKER_WACHTWOORD, GEBRUIKER_VOORNAAM, GEBRUIKER_TUSSENVOEGSEL, GEBRUIKER_ACHTERNAAM,
             GEBRUIKER_STAD, GEBRUIKER_EMAIL, GEBRUIKER_TELEFOONNUMMER, GEBRUIKER_POSTCODE};
-    private static final String[] DierKolom = {DIER_ID, DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_POSTCODE, DIER_EIGENSCHAPPEN, DIER_GEBRUIKER_ID};
+    private static final String[] DierKolom = {DIER_ID, DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_POSTCODE, DIER_EIGENSCHAPPEN, DIER_GEBRUIKER_ID, DIER_IMAGE_ID};
     private static final String[] BerichtKolom = {BERICHT_BERICHT_ID, BERICHT_DIER_ID, BERICHT_GEBRUIKER_ID, BERICHT_DATUM, BERICHT_POSTCODE, BERICHT_BERICHT};
 
     public Database(Context context) {
@@ -85,6 +86,7 @@ public class Database extends SQLiteOpenHelper {
                         "postcode VARCHAR(6) NOT NULL," +
                         "eigenschappen VARCHAR (40)," +
                         "gebruiker_ID INTEGER NOT NULL," +
+                        "image_ID TEXT," +
                         "PRIMARY KEY (dier_ID)" +
                         " FOREIGN KEY (gebruiker_ID) REFERENCES GEBRUIKER (gebruiker_ID)" +
                         ");";
@@ -262,6 +264,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(DIER_POSTCODE, dier.getPostcode());
         values.put(DIER_EIGENSCHAPPEN, dier.getEigenschappen());
         values.put(DIER_GEBRUIKER_ID, dier.getGebruiker_ID());
+        values.put(DIER_IMAGE_ID, dier.getImage_ID());
 
 
         db.insert(TABLE_DIER,
@@ -299,6 +302,7 @@ public class Database extends SQLiteOpenHelper {
         dier.setPostcode(cursor.getString(7));
         dier.setEigenschappen(cursor.getString(8));
         dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+        dier.setImage_ID(Integer.parseInt(cursor.getString(10)));
 
         Log.d("getDier(" + id + ")", dier.toString());
         return dier;
@@ -325,6 +329,7 @@ public class Database extends SQLiteOpenHelper {
                 dier.setPostcode(cursor.getString(7));
                 dier.setEigenschappen(cursor.getString(8));
                 dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+                dier.setImage_ID(Integer.parseInt(cursor.getString(10)));
 
                 dieren.add(dier);
             } while (cursor.moveToNext());
@@ -356,6 +361,7 @@ public class Database extends SQLiteOpenHelper {
                 dier.setPostcode(cursor.getString(7));
                 dier.setEigenschappen(cursor.getString(8));
                 dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+                dier.setImage_ID(Integer.parseInt(cursor.getString(10)));
 
                 dieren.add(dier);
             } while (cursor.moveToNext());
@@ -388,6 +394,7 @@ public class Database extends SQLiteOpenHelper {
                 dier.setPostcode(cursor.getString(7));
                 dier.setEigenschappen(cursor.getString(8));
                 dier.setGebruiker_ID(Integer.parseInt(cursor.getString(9)));
+                dier.setImage_ID(Integer.parseInt(cursor.getString(10)));
 
                 dieren.add(dier);
             } while (cursor.moveToNext());
@@ -416,6 +423,7 @@ public class Database extends SQLiteOpenHelper {
         values.put(DIER_POSTCODE, dier.getPostcode());
         values.put(DIER_EIGENSCHAPPEN, dier.getEigenschappen());
         values.put(DIER_GEBRUIKER_ID, dier.getGebruiker_ID());
+        values.put(DIER_IMAGE_ID, dier.getImage_ID());
 
         int i = db.update(TABLE_DIER,
                 values,

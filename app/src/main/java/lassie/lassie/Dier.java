@@ -13,6 +13,7 @@ public class Dier {
     private static final String DIER_POSTCODE = "postcode";
     private static final String DIER_EIGENSCHAPPEN = "eigenschappen";
     private static final String DIER_GEBRUIKER_ID = "gebruiker_ID";
+    private static final String DIER_IMAGE_ID = "image_ID";
     private static final String[] DierKolom = {DIER_NAAM, DIER_DIERSOORT, DIER_RAS, DIER_GESLACHT, DIER_KLEUR, DIER_STATUS, DIER_POSTCODE, DIER_EIGENSCHAPPEN, DIER_GEBRUIKER_ID};
     private int dier_ID;
     private String naam;
@@ -24,8 +25,24 @@ public class Dier {
     private String postcode;
     private String eigenschappen;
     private int gebruiker_ID;
+    private int image_ID;
 
     public Dier() {
+    }
+
+    public Dier(int dier_ID, String naam, String diersoort, String ras, String geslacht, String kleur, String status, String postcode, String eigenschappen, int gebruiker_ID, int image_ID) {
+        super();
+        this.dier_ID = dier_ID;
+        this.diersoort = diersoort;
+        this.naam = naam;
+        this.ras = ras;
+        this.geslacht = geslacht;
+        this.kleur = kleur;
+        this.status = status;
+        this.postcode = postcode;
+        this.eigenschappen = eigenschappen;
+        this.gebruiker_ID = gebruiker_ID;
+        this.image_ID = image_ID;
     }
 
     public Dier(int dier_ID, String naam, String diersoort, String ras, String geslacht, String kleur, String status, String postcode, String eigenschappen, int gebruiker_ID) {
@@ -124,10 +141,19 @@ public class Dier {
         this.gebruiker_ID = gebruiker_ID;
     }
 
+    public int getImage_ID() {
+        return image_ID;
+    }
+
+    public void setImage_ID(int image_ID) {
+        this.image_ID = image_ID;
+    }
+
     @Override
     public String toString() {
         return "DIER [Dier_ID = " + dier_ID + ", naam = " + naam + ", diersoort = " + diersoort + ", ras = "
                 + ras + ", geslacht = " + geslacht + ", kleur = " + kleur + ", status = " + status
-                + ", postcode = " + postcode + ", eigenschappen = " + eigenschappen + ", gebruiker_ID = " + gebruiker_ID + "]";
+                + ", postcode = " + postcode + ", eigenschappen = " + eigenschappen + ", gebruiker_ID = " + gebruiker_ID
+                + ", image_ID = " + image_ID + "]";
     }
 }

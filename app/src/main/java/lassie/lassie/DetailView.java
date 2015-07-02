@@ -34,6 +34,7 @@ public class DetailView extends Fragment {
         int dier_ID = extras.getInt("dier_ID");
         Dier dier = db.getDier(dier_ID);
 
+        ImageView imageview = (ImageView) fragmentview.findViewById(R.id.imageview_profiel);
         TextView naam = (TextView) fragmentview.findViewById(R.id.dier_naam);
         TextView diersoort = (TextView) fragmentview.findViewById(R.id.dier_diersoort);
         TextView ras = (TextView) fragmentview.findViewById(R.id.dier_ras);
@@ -43,6 +44,7 @@ public class DetailView extends Fragment {
         TextView postcode = (TextView) fragmentview.findViewById(R.id.dier_postcode);
         TextView eigenschappen = (TextView) fragmentview.findViewById(R.id.dier_eigenschappen);
 
+        imageview.setImageResource(dier.getImage_ID());
         naam.setText(dier.getNaam());
         diersoort.setText(dier.getDiersoort());
         ras.setText(dier.getRas());

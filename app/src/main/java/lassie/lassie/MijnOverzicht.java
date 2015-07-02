@@ -84,7 +84,7 @@ public class MijnOverzicht extends Fragment {
                 RoundImage roundedImage;
                 roundedImage = new RoundImage(bm);
                 imageview.setLayoutParams(new TableRow.LayoutParams(100, 100));
-                imageview.setImageDrawable(roundedImage);
+                imageview.setImageResource(dierUitLijst.getImage_ID());
                 imageviewProfielListener(imageview, dierUitLijst.getDier_ID(), bm);
                 row.addView(imageview);
 
