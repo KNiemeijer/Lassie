@@ -12,10 +12,6 @@ import android.widget.TextView;
 
 import java.util.List;
 
-/**
- * Created by Sander on 31-5-2015.
- */
-
 //Wordt nog niet gebruikt maar moet uitkomst bieden bij de lijst-weergave
 public class CustomArrayAdapter extends ArrayAdapter<Menu> {
 
@@ -27,13 +23,6 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
         this.context = context;
     }
 
-    private class ViewLijst {
-        ImageView imageView;
-        TextView txtLijstNaam;
-        TextView txtBeschrijving;
-        TextView txtStatus;
-    }
-
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewLijst holder = null;
         Menu rowItem = getItem(position);
@@ -43,10 +32,9 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
         if (convertView == null) {
             convertView = mInflater.inflate(R.layout.fragment_lijst_kaart, null);
             holder = new ViewLijst();
-            holder.txtLijstNaam = (TextView) convertView.findViewById(R.id.lijst_naam);
-            holder.txtBeschrijving = (TextView) convertView.findViewById(R.id.beschrijving);
-            holder.txtStatus = (TextView) convertView.findViewById(R.id.dierstatus);
-            holder.imageView = (ImageView) convertView.findViewById(R.id.lijst_plaatje);
+            //       holder.txtLijstNaam = (TextView) convertView.findViewById(R.id.lijst_naam);holder.txtBeschrijving = (TextView) convertView.findViewById(R.id.beschrijving);
+            //       holder.txtStatus = (TextView) convertView.findViewById(R.id.dierstatus);
+            //       holder.imageView = (ImageView) convertView.findViewById(R.id.lijst_plaatje);
             convertView.setTag(holder);
         } else
             holder = (ViewLijst) convertView.getTag();
@@ -58,6 +46,13 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
         //holder.imageView.setImageResource(rowItem.getImageId());
 
         return convertView;
+    }
+
+    private class ViewLijst {
+        ImageView imageView;
+        TextView txtLijstNaam;
+        TextView txtBeschrijving;
+        TextView txtStatus;
     }
 
 }
