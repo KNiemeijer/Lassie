@@ -63,7 +63,7 @@
         android:layout_above="@id/linearlayout_togglebutton"
         android:layout_alignParentStart="true"
         android:layout_below="@id/button_plaats_bericht"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="80dp">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -87,7 +87,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="75dp"
                 android:layout_toEndOf="@+id/textview_status_dier1"
                 android:text=""
                 android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -117,7 +117,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="75dp"
                 android:layout_marginLeft="10dp"
                 android:layout_toEndOf="@+id/textview_status_dier2"
                 android:text=""
@@ -148,7 +148,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_gravity="bottom"
-                android:layout_marginBottom="100dp"
+                android:layout_marginBottom="75dp"
                 android:layout_toEndOf="@+id/textview_status_dier3"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
