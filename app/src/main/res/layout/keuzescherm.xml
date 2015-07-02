@@ -10,7 +10,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:contentDescription="@string/contentdescription_logo"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logohd" />
 
     <Button
         android:id="@+id/button_inloggen"
