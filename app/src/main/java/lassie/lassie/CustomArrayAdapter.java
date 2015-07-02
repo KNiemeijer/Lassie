@@ -19,10 +19,9 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
 
     public CustomArrayAdapter(Context context, int textViewResourceId, List<Menu> objects) {
         super(context, textViewResourceId, objects);
-        // TODO Auto-generated constructor stub
         this.context = context;
     }
-
+/*
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewLijst holder = null;
         Menu rowItem = getItem(position);
@@ -40,10 +39,6 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
             holder = (ViewLijst) convertView.getTag();
 
         // TODO Gegevens uit lijst laten ophalen
-        //holder.txtLijstNaam.setText(rowItem.getDescription());
-        //holder.txtBeschrijving.setText(rowItem.getName());
-        //holder.txtStatus.setText(String.valueOf(rowItem.getPrice()) + " TL");
-        //holder.imageView.setImageResource(rowItem.getImageId());
 
         return convertView;
     }
@@ -53,6 +48,6 @@ public class CustomArrayAdapter extends ArrayAdapter<Menu> {
         TextView txtLijstNaam;
         TextView txtBeschrijving;
         TextView txtStatus;
-    }
+    }*/
 
 }

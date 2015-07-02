@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/lijstContent"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:weightSum="2"
 
-    tools:context="lassie.lassie.LijstKaart">
+    tools:context="lassie.lassie.HomeActivity">
 
     <LinearLayout
         android:id="@+id/knoppen"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="2">
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:orientation="horizontal">
 
         <ToggleButton
             android:id="@+id/button_lijst"
@@ -43,4 +45,447 @@
             android:textOn="Kaart" />
     </LinearLayout>
 
-</LinearLayout>
+    <!-- Plaatje -->
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/knoppen"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:src="@drawable/ic_hond_voorbeeld" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Zoef"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail"
+        android:layout_below="@id/lijst_naam"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Beagle \nWit met bruin"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_vermist"
+        android:textColor="#FF0000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
+    <!-- Nu paar keer hetzelfde zodat het mooi staat bij demo -->
+    
+    <LinearLayout
+        android:id="@+id/thumbnail1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje1"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_lassie" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail1"
+        android:layout_toRightOf="@+id/thumbnail1"
+        android:text="Lassie"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail1"
+        android:layout_below="@id/lijst_naam1"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail1"
+        android:text="Collie \nBruin met wit"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam1"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_vermist"
+        android:textColor="#FF0000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
+    <LinearLayout
+        android:id="@+id/thumbnail2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail1"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje2"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_kat_voorbeeld" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail2"
+        android:layout_toRightOf="@+id/thumbnail2"
+        android:text="Frank"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail2"
+        android:layout_below="@id/lijst_naam2"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail2"
+        android:text="Lapjeskat \nWit met grijs"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam2"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_gevonden"
+        android:textColor="#008000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+
+    <LinearLayout
+        android:id="@+id/thumbnail3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail2"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje3"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_adolf" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail3"
+        android:layout_toRightOf="@+id/thumbnail3"
+        android:text="Helmutt"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail3"
+        android:layout_below="@id/lijst_naam3"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail3"
+        android:text="Kat (onbekend ras) \nZwart met wit"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam3"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_vermist"
+        android:textColor="#F00000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+    
+    <LinearLayout
+        android:id="@+id/thumbnail4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail3"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje4"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_siamese_kat" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail4"
+        android:layout_toRightOf="@+id/thumbnail4"
+        android:text="Meneer Janssen"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail4"
+        android:layout_below="@id/lijst_naam4"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail4"
+        android:text="Siamese kat \nBruin met zwart"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam4"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_vermist"
+        android:textColor="#F00000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp" />
+    
+    <LinearLayout
+        android:id="@+id/thumbnail5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail4"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje5"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_border_collie" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail5"
+        android:layout_toRightOf="@+id/thumbnail5"
+        android:text="Hans"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail5"
+        android:layout_below="@id/lijst_naam5"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail5"
+        android:text="Border collie \nZwart met wit"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam5"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_vermist"
+        android:textColor="#F00000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp"/>
+
+
+    <LinearLayout
+        android:id="@+id/thumbnail6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/thumbnail5"
+        android:layout_marginRight="5dip"
+        android:padding="3dip"
+        >
+
+        <ImageView
+            android:id="@+id/lijst_plaatje6"
+            android:layout_width="50dip"
+            android:layout_height="50dip"
+            android:contentDescription="@string/edittext_email"
+            android:src="@drawable/ic_doge" />
+    </LinearLayout>
+
+    <!-- Lijst naam  -->
+
+    <TextView
+        android:id="@+id/lijst_naam6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/thumbnail6"
+        android:layout_toRightOf="@+id/thumbnail6"
+        android:text="Doge"
+        android:textColor="#040404"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:typeface="sans" />
+
+    <!-- Beschrijving -->
+
+    <TextView
+        android:id="@+id/beschrijving6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/thumbnail6"
+        android:layout_below="@id/lijst_naam6"
+        android:layout_marginTop="1dip"
+        android:layout_toRightOf="@+id/thumbnail6"
+        android:text="Shiba Inu  \nGoud-geel"
+        android:textColor="#343434"
+        android:textSize="10sp"
+        tools:ignore="SmallSp" />
+
+    <!-- Status -->
+
+    <TextView
+        android:id="@+id/dierstatus6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@id/lijst_naam6"
+        android:layout_marginRight="5dip"
+        android:gravity="right"
+        android:text="@string/button_gevonden"
+        android:textColor="#088000"
+        android:textSize="10sp"
+        android:textStyle="bold"
+        tools:ignore="SmallSp"/>
+</RelativeLayout>

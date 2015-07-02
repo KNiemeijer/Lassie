@@ -64,6 +64,8 @@ public class Home extends Activity {
         db.addDier(dier);
         dier = new Dier(3, "Frank", "Kat", "Lapjeskat", "Vrouw", "Wit met grijs", "Gevonden", "3607CA", "Verstopt zich graag onder auto's", 0, R.drawable.ic_kat_voorbeeld);
         db.addDier(dier);
+        dier = new Dier(4, "Doge", "Hond", "Shiba Inu", "Man", "Goud-geel", "Gevonden", "8071BA" ,"Houdt van camera's", 0, R.drawable.ic_doge);
+        db.addDier(dier);
 
         Bericht bericht = new Bericht(1, gebruikerID, 3, "27-06-2015", "1202AE", "Aan DierenLiefhebber1:\nHallo ik geloof dat ik" +
                 "jouw kat heb gezien op de Kruisstraat. Kan dit?");
