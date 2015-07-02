@@ -128,6 +128,24 @@ public class HomeActivity extends Fragment {
         Database db = new Database(getActivity());
         List<Dier> vermisteDieren = db.getAllVermisteDieren();
         List<Dier> gevondenDieren = db.getAllGevondenDieren();
+        ImageView dier1 = (ImageView) fragmentview.findViewById(R.id.imageview_dier1);
+        ImageView dier2 = (ImageView) fragmentview.findViewById(R.id.imageview_dier2);
+        ImageView dier3 = (ImageView) fragmentview.findViewById(R.id.imageview_dier3);
+        TextView dier1_status = (TextView) fragmentview.findViewById(R.id.textview_status_dier1);
+        TextView dier2_status = (TextView) fragmentview.findViewById(R.id.textview_status_dier2);
+        TextView dier3_status = (TextView) fragmentview.findViewById(R.id.textview_status_dier3);
+        TextView textview_dier1 = (TextView) fragmentview.findViewById(R.id.textview_dier1);
+        TextView textview_dier2 = (TextView) fragmentview.findViewById(R.id.textview_dier2);
+        TextView textview_dier3 = (TextView) fragmentview.findViewById(R.id.textview_dier3);
+        dier1.setImageResource(0);
+        dier2.setImageResource(0);
+        dier3.setImageResource(0);
+        dier1_status.setText("");
+        dier2_status.setText("");
+        dier3_status.setText("");
+        textview_dier1.setText("");
+        textview_dier2.setText("");
+        textview_dier3.setText("");
 
         String i;
 
