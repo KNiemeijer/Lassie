@@ -32,6 +32,17 @@ public class Home extends Activity {
         if (wachtwoord.getText().toString().equals(herhaal_wachtwoord.getText().toString())) {
             int gebruikerID = db.getAllGebruikers().size() + 1;
             voegToeVoorPrototype(gebruikerID);
+
+            Gebruiker gebruiker = new Gebruiker(gebruikerID, ((EditText) findViewById(R.id.edittext_gebruikersnaam)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_wachtwoord)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_voornaam)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_achternaam)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_stad)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_email)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_telefoonnummer)).getText().toString(),
+                    ((EditText) findViewById(R.id.edittext_postcode)).getText().toString());
+            db.addGebruiker(gebruiker);
+
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtra("gebruikerID", gebruikerID);
             startActivity(intent);
@@ -46,10 +57,6 @@ public class Home extends Activity {
     }
 
     private void voegToeVoorPrototype(int gebruikerID) {
-        Gebruiker gebruiker = new Gebruiker(gebruikerID, ((EditText) findViewById(R.id.edittext_gebruikersnaam)).getText().toString(),
-                ((EditText) findViewById(R.id.edittext_wachtwoord)).getText().toString(),
-                ((EditText) findViewById(R.id.edittext_email)).getText().toString());
-        db.addGebruiker(gebruiker);
 
         Dier dier = new Dier(1, "Zoef", "Hond", "Beagle", "Man", "Wit met bruin", "Vermist", "3571ZZ", "Is schuw maar wel lief", 1);
         db.addDier(dier);

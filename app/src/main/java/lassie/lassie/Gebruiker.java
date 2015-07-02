@@ -49,13 +49,12 @@ public class Gebruiker {
         this.telefoonnummer = telefoonnummer;
     }
 
-    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String tussenvoegsel, String achternaam, String stad, String email, String telefoonnummer, String postcode) {
+    public Gebruiker(int gebruiker_ID, String gebruikersnaam, String wachtwoord, String voornaam, String achternaam, String stad, String email, String telefoonnummer, String postcode) {
         super();
         this.gebruiker_ID = gebruiker_ID;
         this.gebruikersnaam = gebruikersnaam;
         this.wachtwoord = wachtwoord;
         this.voornaam = voornaam;
-        this.tussenvoegsel = tussenvoegsel;
         this.achternaam = achternaam;
         this.stad = stad;
         this.email = email;

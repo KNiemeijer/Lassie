@@ -4,105 +4,225 @@
     android:clickable="false"
     android:orientation="horizontal">
 
-    <Button
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
         android:id="@+id/button_continue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textview_login_met"
         android:layout_centerHorizontal="true"
+                android:layout_marginBottom="50dp"
         android:layout_marginTop="10dp"
         android:background="@color/onze_kleur"
         android:onClick="Continue"
         android:padding="10dp"
         android:text="@string/button_continue" />
 
-    <EditText
+            <TextView
+                android:id="@+id/textview_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textview_nieuw_account"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:text="@string/textview_email"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_gebruikersnaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_email"
+                android:layout_below="@+id/textview_email"
+                android:layout_marginTop="10dp"
+                android:text="@string/textview_gebruikersnaam"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_wachtwoord"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_gebruikersnaam"
+                android:layout_below="@+id/textview_gebruikersnaam"
+                android:layout_marginTop="10dp"
+                android:text="@string/textview_wachtwoord"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_herhaal_wachtwoord"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_wachtwoord"
+                android:layout_below="@id/textview_wachtwoord"
+                android:layout_marginTop="10dp"
+                android:text="@string/textview_herhaal_wachtwoord"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_voornaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_herhaal_wachtwoord"
+                android:layout_below="@id/textview_herhaal_wachtwoord"
+                android:layout_marginTop="10dp"
+                android:text="Voornaam:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_achternaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_voornaam"
+                android:layout_below="@id/textview_voornaam"
+                android:layout_marginTop="10dp"
+                android:text="Achternaam:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_stad"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_achternaam"
+                android:layout_below="@id/textview_achternaam"
+                android:layout_marginTop="10dp"
+                android:text="Stad:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_telefoonnummer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_stad"
+                android:layout_below="@id/textview_stad"
+                android:layout_marginTop="10dp"
+                android:text="Telefoonnummer:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/textview_postcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textview_telefoonnummer"
+                android:layout_below="@id/textview_telefoonnummer"
+                android:layout_marginTop="10dp"
+                android:text="Postcode:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="18sp" />
+
+            <EditText
         android:id="@+id/edittext_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/edittext_gebruikersnaam"
+                android:layout_alignBottom="@id/textview_email"
         android:layout_below="@+id/textview_nieuw_account"
-        android:layout_marginTop="28dp"
-        android:ems="10"
-        android:hint="@string/edittext_email"
-        android:inputType="textEmailAddress" />
+                android:layout_marginStart="100dp"
+                android:layout_toEndOf="@id/textview_email"
+                android:inputType="textEmailAddress"
+                android:minEms="8"
+                android:singleLine="true" />
 
     <EditText
         android:id="@+id/edittext_gebruikersnaam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/edittext_wachtwoord"
-        android:layout_alignTop="@+id/textview_gebruikersnaam"
-        android:ems="10"
-        android:hint="@string/edittext_gebruikersnaam"
-        android:inputType="textPersonName" />
+        android:layout_alignBottom="@id/textview_gebruikersnaam"
+        android:layout_alignStart="@+id/edittext_email"
+        android:inputType="textPersonName"
+        android:minEms="8"
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/edittext_wachtwoord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/edittext_herhaal_wachtwoord"
-        android:layout_below="@+id/edittext_gebruikersnaam"
-        android:ems="10"
-        android:inputType="textPassword"/>
+        android:layout_alignBottom="@id/textview_wachtwoord"
+        android:layout_alignStart="@+id/edittext_gebruikersnaam"
+        android:inputType="textPassword"
+        android:minEms="8"
+        android:singleLine="true" />
 
     <EditText
         android:id="@+id/edittext_herhaal_wachtwoord"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/button_continue"
-        android:layout_below="@+id/edittext_wachtwoord"
-        android:ems="10"
-        android:inputType="textPassword"/>
+        android:layout_alignBottom="@id/textview_herhaal_wachtwoord"
+        android:layout_alignStart="@+id/edittext_wachtwoord"
+        android:inputType="textPassword"
+        android:minEms="8"
+        android:singleLine="true" />
 
-    <!-- TODO: Overflow in edittext -->
+            <EditText
+                android:id="@+id/edittext_voornaam"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/textview_voornaam"
+                android:layout_alignStart="@+id/edittext_herhaal_wachtwoord"
+                android:minEms="8"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textview_email"
+            <EditText
+                android:id="@+id/edittext_achternaam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textview_gebruikersnaam"
-        android:layout_alignTop="@+id/edittext_email"
-        android:labelFor="@id/edittext_email"
-        android:text="@string/textview_email"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+                android:layout_alignBottom="@id/textview_achternaam"
+                android:layout_alignStart="@+id/edittext_email"
+                android:minEms="8"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textview_gebruikersnaam"
+
+            <EditText
+                android:id="@+id/edittext_stad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/edittext_email"
-        android:labelFor="@id/edittext_gebruikersnaam"
-        android:text="@string/textview_gebruikersnaam"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+                android:layout_alignBottom="@id/textview_stad"
+                android:layout_alignStart="@+id/edittext_email"
+                android:minEms="8"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textview_wachtwoord"
+            <EditText
+                android:id="@+id/edittext_telefoonnummer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/textview_gebruikersnaam"
-        android:layout_below="@+id/edittext_gebruikersnaam"
-        android:labelFor="@id/edittext_wachtwoord"
-        android:text="@string/textview_wachtwoord"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+                android:layout_alignBottom="@id/textview_telefoonnummer"
+                android:layout_alignStart="@+id/edittext_email"
+                android:inputType="phone"
+                android:minEms="8"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <TextView
-        android:id="@+id/textview_herhaal_wachtwoord"
-        android:layout_width="150dp"
+            <EditText
+                android:id="@+id/edittext_postcode"
+                android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/edittext_herhaal_wachtwoord"
-        android:layout_alignStart="@+id/textview_wachtwoord"
-        android:layout_toStartOf="@+id/edittext_wachtwoord"
-        android:labelFor="@id/edittext_herhaal_wachtwoord"
-        android:text="@string/textview_herhaal_wachtwoord"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="18sp" />
+                android:layout_alignBottom="@id/textview_postcode"
+                android:layout_alignStart="@+id/edittext_email"
+                android:inputType="textPostalAddress"
+                android:minEms="8"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+            -->
+            <!-- TODO: Overflow in edittext -->
 
-    <ImageView
+
+            <ImageView
         android:id="@+id/imageview_logo"
         android:layout_width="150dp"
         android:layout_height="150dp"
@@ -110,8 +230,7 @@
         android:layout_centerHorizontal="true"
         android:contentDescription="@string/contentdescription_logo"
         android:scaleType="fitXY"
-        android:src="@drawable/logo"
-         />
+                android:src="@drawable/logo" />
 
     <TextView
         android:id="@+id/textview_nieuw_account"
@@ -126,9 +245,9 @@
         android:id="@+id/textview_login_met"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textview_email"
-        android:layout_below="@+id/edittext_herhaal_wachtwoord"
+        android:layout_below="@+id/edittext_postcode"
         android:layout_marginBottom="30dp"
+        android:layout_marginStart="80dp"
         android:layout_marginTop="30dp"
         android:text="@string/textview_login_met"
         android:textAppearance="?android:attr/textAppearanceMedium" />
@@ -162,5 +281,6 @@
         android:layout_toEndOf="@+id/textview_of"
         android:contentDescription="@string/imageview_google"
         android:src="@drawable/ic_google" />
-
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
